@@ -1,12 +1,14 @@
 {
    "name": "portfolio",
+   "type": "module",
    "version": "0.1.0",
    "private": true,
    "scripts": {
       "dev": "next dev",
       "build": "next build",
       "start": "next start",
-      "lint": "next lint"
+      "lint": "next lint",
+      "create": "node createComponent.js"
    },
    "dependencies": {
       "next": "14.2.8",
@@ -18,6 +20,7 @@
       "@types/react": "18",
       "@types/react-dom": "18",
       "prettier": "3.3.3",
+      "sass": "1.78.0",
       "stylelint": "16.9.0",
       "stylelint-config-clean-order": "6.1.0",
       "typescript": "5"

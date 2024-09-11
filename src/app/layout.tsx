@@ -1,6 +1,7 @@
 import type {Metadata} from 'next'
-import './globals.css'
 import {ReactNode} from 'react'
+import {poppins, raleway, roboto} from '@/app/fonts'
+import './global.css'
 
 export const metadata: Metadata = {
    title: 'Nazar Prytuliak',
@@ -13,7 +14,7 @@ export default function RootLayout({
    children: ReactNode
 }>) {
    return (
-      <html lang='en'>
+      <html lang='en' className={`${raleway.variable} ${roboto.variable} ${poppins.variable}`}>
          <body>{children}</body>
       </html>
    )
