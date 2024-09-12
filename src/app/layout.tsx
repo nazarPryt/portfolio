@@ -1,7 +1,7 @@
 import type {Metadata} from 'next'
 import {ReactNode} from 'react'
-import {poppins, raleway, roboto} from '@/app/fonts'
-import './global.css'
+import {navFont, defaultFont, headingFont} from '@/styles/fonts'
+import '@/styles/main.scss'
 
 export const metadata: Metadata = {
    title: 'Nazar Prytuliak',
@@ -14,7 +14,7 @@ export default function RootLayout({
    children: ReactNode
 }>) {
    return (
-      <html lang='en' className={`${raleway.variable} ${roboto.variable} ${poppins.variable}`}>
+      <html lang='en' className={`${navFont.variable} ${defaultFont.variable} ${headingFont.variable}`}>
          <body>{children}</body>
       </html>
    )

@@ -1,8 +1,8 @@
 /*!* Fonts *!*/
 :root {
-   --font-roboto: 'Roboto', sans-serif;
-   --font-raleway: 'Raleway', sans-serif;
-   --font-poppins: 'Poppins', sans-serif;
+   --default-font: Roboto;
+   --heading-font: Raleway;
+   --nav-font: Poppins;
 }
 
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
@@ -25,57 +25,6 @@
    --nav-dropdown-hover-color: #ffffff; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
 }
 
-/* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
-
-.light-background {
-   --background-color: #f4fafd;
-   --surface-color: #ffffff;
-}
-
-.dark-background {
-   --background-color: #040b14;
-   --default-color: #ffffff;
-   --heading-color: #ffffff;
-   --surface-color: #151f2b;
-   --contrast-color: #ffffff;
-}
-
-/* Smooth scroll */
 :root {
-   scroll-behavior: smooth;
-}
-
-* {
-   box-sizing: border-box;
-   margin: 0;
-   padding: 0;
-}
-/*--------------------------------------------------------------
-# General Styling & Shared Classes
---------------------------------------------------------------*/
-body {
-   font-family: var(--font-roboto);
-   color: var(--default-color);
-   background-color: var(--background-color);
-}
-
-a {
-   color: var(--accent-color);
-   text-decoration: none;
-   transition: 0.3s;
-}
-
-a:hover {
-   color: color-mix(in srgb, var(--accent-color), transparent 25%);
-   text-decoration: none;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-   font-family: var(--font-raleway);
-   color: var(--heading-color);
+   --font-size: 16px;
 }

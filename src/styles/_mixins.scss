@@ -1,0 +1,14 @@
+@mixin flex-center {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+// https://medium.com/@bhargav3shah/scss-convert-pixel-values-to-rem-using-functions-f1cef575edfd
+@function stripUnit($value) {
+   @return $value / ($value * 0 + 1);
+}
+
+@function toRem($pxValue) {
+   @return #{stripUnit($pxValue) / stripUnit(--font-size)}rem;
+}

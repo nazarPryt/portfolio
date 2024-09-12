@@ -1,0 +1,27 @@
+.SocialLinks {
+   margin: 0 0 20px 0;
+
+   a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      width: 40px;
+      height: 40px;
+      margin: 0 2px;
+
+      font-size: 16px;
+      color: var(--default-color);
+      text-align: center;
+
+      background: color-mix(in srgb, var(--default-color), transparent 90%);
+      border-radius: 50%;
+
+      transition: 0.3s;
+
+      &:hover {
+         color: var(--contrast-color);
+         background: var(--accent-color);
+      }
+   }
+}

@@ -1,0 +1,54 @@
+.Header {
+   position: fixed;
+   z-index: 10;
+   top: 0;
+   bottom: 0;
+   left: 0;
+
+   overflow-y: auto;
+
+   width: toRem(300px);
+   padding: 0 15px;
+
+   color: var(--default-color);
+
+   background-color: var(--background-color);
+   border-right: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+
+   transition: all ease-in-out 0.3s;
+
+   .profileImg {
+      img {
+         display: block;
+
+         width: 120px;
+         max-width: 100%;
+         height: auto;
+         margin: 15px auto;
+
+         border: 8px solid color-mix(in srgb, var(--default-color), transparent 85%);
+         border-radius: 50%;
+      }
+   }
+   h1 {
+      margin: 0;
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--heading-color);
+   }
+}
+
+@media (min-width: 1200px) {
+   .header ~ {
+      main,
+      #footer {
+         margin-left: 300px;
+      }
+   }
+}
+
+@media (max-width: 1199px) {
+   .header {
+      left: -100%;
+   }
+}

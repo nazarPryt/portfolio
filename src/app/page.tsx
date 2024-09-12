@@ -1,11 +1,11 @@
-import {NavBar} from '@/components/NavBar'
+import {Header} from '@/components/Header'
 import {Main} from '@/components/Main'
 import s from './page.module.scss'
 
 export default function Home() {
    return (
       <div className={s.page}>
-         <NavBar />
+         <Header />
          <Main />
       </div>
    )
