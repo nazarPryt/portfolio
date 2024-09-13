@@ -1,4 +1,15 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {};
+import path from 'path'
+import {fileURLToPath} from 'url'
 
-export default nextConfig;
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
+
+export default {
+   sassOptions: {
+      includePaths: [path.join(__dirname, 'src/styles')],
+      prependData: `
+      @import "functions.scss";
+      @import "mixins.scss";
+    `,
+   },
+}

@@ -1,0 +1,17 @@
+@mixin flexCenter {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+@mixin responsiveFont($size-small, $size-large) {
+   font-size: $size-small;
+
+   @media (min-width: 768px) {
+      font-size: $size-large;
+   }
+}
+
+@mixin test {
+   background-color: blue;
+}

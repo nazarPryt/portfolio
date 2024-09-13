@@ -1,3 +1,4 @@
-@forward 'mixins';
-@forward 'variables';
-@forward 'boilerplate';
+@import 'variables';
+@import 'boilerplate';
+@import 'functions';
+@import 'mixins';
