@@ -1,0 +1,13 @@
+html[data-theme='light'] {
+   color: black;
+   background-color: white;
+}
+
+html[data-theme='dark'] {
+   color: white;
+   background-color: black;
+}
+
+html[data-theme='system'] {
+   /* Can be handled with JavaScript to detect system preferences */
+}

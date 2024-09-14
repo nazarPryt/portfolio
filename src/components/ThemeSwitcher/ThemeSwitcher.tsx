@@ -8,24 +8,9 @@ const ThemeButtons = () => {
 
    return (
       <div className={s.ThemeSwitcher}>
-         <button
-            onClick={() => setTheme('light')}
-            className={`px-4 py-2 ${theme === 'light' ? 'bg-blue-500 text-white' : 'bg-gray-200'}`}
-         >
-            Light
-         </button>
-         <button
-            onClick={() => setTheme('dark')}
-            className={`px-4 py-2 ${theme === 'dark' ? 'bg-blue-500 text-white' : 'bg-gray-200'}`}
-         >
-            Dark
-         </button>
-         <button
-            onClick={() => setTheme('system')}
-            className={`px-4 py-2 ${theme === 'system' ? 'bg-blue-500 text-white' : 'bg-gray-200'}`}
-         >
-            System
-         </button>
+         <button onClick={() => setTheme('light')}>Light</button>
+         <button onClick={() => setTheme('dark')}>Dark</button>
+         <button onClick={() => setTheme('system')}>System</button>
       </div>
    )
 }

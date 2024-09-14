@@ -8,8 +8,11 @@
 
 body {
    scroll-behavior: smooth;
+
    font-family: var(--default-font), sans-serif;
-   color: var(--default-color);
+   line-height: 1;
+   color: var(--text-color);
+
    background-color: var(--background-color);
 }
 
@@ -22,6 +25,10 @@ a {
       color: color-mix(in srgb, var(--accent-color), transparent 25%);
       text-decoration: none;
    }
+}
+img {
+   width: 100%;
+   height: auto;
 }
 
 h1,

@@ -22,12 +22,13 @@ export default function RootLayout({
    const theme = cookies().get('__theme__')?.value || 'system'
    return (
       <html
+         suppressHydrationWarning
          lang='en'
          style={theme !== 'system' ? {colorScheme: theme} : {}}
          className={`${theme} ${navFont.variable} ${defaultFont.variable} ${headingFont.variable}`}
       >
          <body>
-            <AppThemeProvider attribute='class' defaultTheme={theme} enableSystem>
+            <AppThemeProvider defaultTheme={theme} enableColorScheme themes={['light', 'dark']}>
                {children}
             </AppThemeProvider>
          </body>

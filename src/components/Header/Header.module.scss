@@ -10,23 +10,21 @@
    width: toRem(300px);
    padding: 0 15px;
 
-   color: var(--default-color);
+   color: var(--text-color);
 
    background-color: var(--background-color);
-   border-right: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+   border-right: 1px solid color-mix(in srgb, var(--text-color), transparent 90%);
 
    transition: all ease-in-out 0.3s;
 
    .profileImg {
+      width: 120px;
+      height: 120px;
+
       img {
-         display: block;
-
-         width: 120px;
-         max-width: 100%;
-         height: auto;
-         margin: 15px auto;
-
-         border: 8px solid color-mix(in srgb, var(--default-color), transparent 85%);
+         margin-block: 15px;
+         object-fit: cover;
+         border: 8px solid color-mix(in srgb, var(--text-color), transparent 85%);
          border-radius: 50%;
       }
    }
@@ -35,20 +33,5 @@
       font-size: 24px;
       font-weight: 700;
       color: var(--heading-color);
-   }
-}
-
-@media (min-width: 1200px) {
-   .header ~ {
-      main,
-      #footer {
-         margin-left: 300px;
-      }
-   }
-}
-
-@media (max-width: 1199px) {
-   .header {
-      left: -100%;
    }
 }

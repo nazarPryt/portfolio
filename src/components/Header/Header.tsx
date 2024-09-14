@@ -13,7 +13,7 @@ export const Header = () => {
             <Image src={myProfileImg} alt={'portfolio photo'} />
          </div>
 
-         <h1 className='sitename'>Nazar Prytuliak</h1>
+         <h1>Nazar Prytuliak</h1>
 
          <SocialLinks />
 
