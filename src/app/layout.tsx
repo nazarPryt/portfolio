@@ -24,11 +24,10 @@ export default function RootLayout({
       <html
          suppressHydrationWarning
          lang='en'
-         style={theme !== 'system' ? {colorScheme: theme} : {}}
          className={`${theme} ${navFont.variable} ${defaultFont.variable} ${headingFont.variable}`}
       >
          <body>
-            <AppThemeProvider defaultTheme={theme} enableColorScheme themes={['light', 'dark']}>
+            <AppThemeProvider defaultTheme={theme} enableColorScheme themes={['light', 'dark', 'system']}>
                {children}
             </AppThemeProvider>
          </body>

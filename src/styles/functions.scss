@@ -1,7 +1,13 @@
-@function stripUnit($value) {
-   @return $value / ($value * 0 + 1);
-}
+@use 'sass:math';
 
-@function toRem($pxValue) {
-   @return #{stripUnit($pxValue) / stripUnit(16px)}rem;
+@function toRem($px) {
+   $result: math.div($px, 16) + rem;
+
+   @return $result;
+}
+//EM
+@function toEm($px, $current: 16) {
+   $result: math.div($px, $current) + em;
+
+   @return $result;
 }

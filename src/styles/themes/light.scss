@@ -1,0 +1,17 @@
+html[data-theme='light'] {
+   --background-color: #ffffff;
+   --text-color: #272829;
+   --heading-color: #050d18;
+   --accent-color: #149ddd;
+   --surface-color: #ffffff;
+   --contrast-color: #ffffff;
+
+   /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
+
+   --nav-color: #a8a9b4;
+   --nav-hover-color: #ffffff;
+   --nav-mobile-background-color: #040b14;
+   --nav-dropdown-background-color: #040b14;
+   --nav-dropdown-color: #a8a9b4;
+   --nav-dropdown-hover-color: #ffffff;
+}
