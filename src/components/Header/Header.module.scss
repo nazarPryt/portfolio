@@ -6,6 +6,10 @@
    left: 0;
 
    overflow-y: auto;
+   display: flex;
+   flex-direction: column;
+   gap: 20px;
+   align-items: center;
 
    width: toRem(300);
    padding: 0 15px;

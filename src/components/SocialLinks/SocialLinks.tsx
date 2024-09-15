@@ -2,19 +2,20 @@ import s from './SocialLinks.module.scss'
 import {FacebookIcon} from '@/icons/FacebookIcon'
 import {InstagramIcon} from '@/icons/InstagramIcon'
 import {LinkedinIcon} from '@/icons/LinkedinIcon'
+import Link from 'next/link'
 
 export const SocialLinks = () => {
    return (
       <div className={s.SocialLinks}>
-         <a href='#' className='facebook'>
+         <Link href='#'>
             <FacebookIcon />
-         </a>
-         <a href='#' className='instagram'>
+         </Link>
+         <Link href='#'>
             <InstagramIcon />
-         </a>
-         <a href='#'>
+         </Link>
+         <Link href='#'>
             <LinkedinIcon />
-         </a>
+         </Link>
       </div>
    )
 }

@@ -1,6 +1,6 @@
 import s from './Header.module.scss'
 import Image from 'next/image'
-import myProfileImg from '@/public/my-profile-img.png'
+import myProfileImg from '@/public/my-profile-img.jpg'
 import {NavMenu} from '@/components/NavMenu'
 import {SocialLinks} from '@/components/SocialLinks'
 import {ThemeSwitcher} from '@/components/ThemeSwitcher'
