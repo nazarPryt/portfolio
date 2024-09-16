@@ -1,7 +1,10 @@
 import s from './Main.module.scss'
-
-export type MainProps = {}
+import {Sections} from '@/components/Sections'
 
 export const Main = () => {
-   return <main className={s.Main}>Main</main>
+   return (
+      <main className={s.Main}>
+         <Sections />
+      </main>
+   )
 }

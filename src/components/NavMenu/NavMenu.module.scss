@@ -1,15 +1,10 @@
 .NavMenu {
-   z-index: 9997;
-   padding: 0;
-
-   ul {
-      margin: 0;
-      padding: 0 0 20px 0;
-      list-style: none;
-   }
+   margin: 0;
+   padding: 0 0 20px 0;
 
    a {
       display: flex;
+      gap: 10px;
       align-items: center;
 
       width: 100%;
@@ -23,28 +18,6 @@
 
       transition: 0.3s;
 
-      &:focus {
-         display: flex;
-         align-items: center;
-
-         width: 100%;
-         padding: 15px 10px;
-
-         font-family: var(--nav-font), sans-serif;
-         font-size: 16px;
-         font-weight: 400;
-         color: var(--nav-color);
-         white-space: nowrap;
-
-         transition: 0.3s;
-      }
-
-      .navicon,
-      &:focus .navicon {
-         margin-right: 10px;
-         font-size: 20px;
-      }
-
       &:hover {
          color: var(--nav-hover-color);
       }
@@ -55,17 +28,6 @@
 
       &:focus {
          color: var(--nav-hover-color);
-      }
-   }
-
-   a:hover .navicon {
-      color: var(--accent-color);
-   }
-
-   .active {
-      .navicon,
-      &:focus .navicon {
-         color: var(--accent-color);
       }
    }
 }

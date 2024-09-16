@@ -8,7 +8,6 @@ import {ThemeSwitcher} from '@/components/ThemeSwitcher'
 export const Header = () => {
    return (
       <header className={s.Header}>
-         <ThemeSwitcher />
          <div className={s.profileImg}>
             <Image src={myProfileImg} alt={'portfolio photo'} />
          </div>
@@ -18,6 +17,7 @@ export const Header = () => {
          <SocialLinks />
 
          <NavMenu />
+         <ThemeSwitcher />
       </header>
    )
 }

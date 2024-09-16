@@ -9,39 +9,30 @@ import {EnvelopIcon} from '@/icons/EnvelopIcon'
 export const NavMenu = () => {
    return (
       <nav className={s.NavMenu}>
-         <ul>
-            <li>
-               <a href='#hero' className='active'>
-                  <HouseIcon />
-                  Home
-               </a>
-            </li>
-            <li>
-               <a href='#about'>
-                  <PersonIcon /> About
-               </a>
-            </li>
-            <li>
-               <a href='#resume'>
-                  <TextIcon /> Resume
-               </a>
-            </li>
-            <li>
-               <a href='#portfolio'>
-                  <ImagesIcon /> Portfolio
-               </a>
-            </li>
-            <li>
-               <a href='#services'>
-                  <HddStackIcon /> Services
-               </a>
-            </li>
-            <li>
-               <a href='#contact'>
-                  <EnvelopIcon /> Contact
-               </a>
-            </li>
-         </ul>
+         <a href='#hero'>
+            <HouseIcon />
+            Home
+         </a>
+
+         <a href='#about'>
+            <PersonIcon /> About
+         </a>
+
+         <a href='#resume' className={s.active}>
+            <TextIcon /> Resume
+         </a>
+
+         <a href='#portfolio'>
+            <ImagesIcon /> Portfolio
+         </a>
+
+         <a href='#services'>
+            <HddStackIcon /> Services
+         </a>
+
+         <a href='#contact'>
+            <EnvelopIcon /> Contact
+         </a>
       </nav>
    )
 }
