@@ -7,7 +7,7 @@ import dynamic from 'next/dynamic'
 import {cookies} from 'next/headers'
 
 const AppThemeProvider = dynamic(() => import('@/context/theme'), {
-   ssr: false,
+   ssr: true,
 })
 export const metadata: Metadata = {
    title: 'Nazar Prytuliak',
