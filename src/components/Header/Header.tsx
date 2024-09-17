@@ -1,9 +1,9 @@
 import s from './Header.module.scss'
 import Image from 'next/image'
-import myProfileImg from '@/public/my-profile-img.jpg'
-import {NavMenu} from '@/components/NavMenu'
-import {SocialLinks} from '@/components/SocialLinks'
-import {ThemeSwitcher} from '@/components/ThemeSwitcher'
+import myProfileImg from '@/public/bg/my-profile-img.jpg'
+import {SocialLinks} from './SocialLinks'
+import {NavMenu} from './NavMenu'
+import {ThemeSwitcher} from './ThemeSwitcher'
 
 export const Header = () => {
    return (

@@ -1,10 +1,12 @@
 import s from './Main.module.scss'
-import {Sections} from '@/components/Sections'
+import {Hero} from './Sections/Hero'
+import {About} from './Sections/About'
 
 export const Main = () => {
    return (
       <main className={s.wrapper}>
-         <Sections />
+         <Hero />
+         <About />
       </main>
    )
 }

@@ -1,14 +1,12 @@
 html[data-theme='light'] {
-   --background-color: #ffffff;
-   --text-color: #272829;
-   --heading-color: #050d18;
-   --accent-color: #149ddd;
-   --surface-color: #ffffff;
-   --contrast-color: #ffffff;
+   /* Base Colors */
+   --bg-primary: #df1111;
 
-   /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
+   --text-color-primary: black;
+   --text-color-secondary: white;
 
-   --nav-color: #a8a9b4;
-   --nav-hover-color: #4242c1;
-   --nav-mobile-background-color: #040b14;
+   --text-link-color: #a8a9b4;
+
+   /* Active State */
+   --text-link-hover: blue;
 }

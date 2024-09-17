@@ -5,7 +5,7 @@
 
    @return $result;
 }
-//EM
+
 @function toEm($px, $current: 16) {
    $result: math.div($px, $current) + em;
 

@@ -8,7 +8,7 @@ import {EnvelopIcon} from '@/icons/EnvelopIcon'
 
 export const NavMenu = () => {
    return (
-      <nav className={s.NavMenu}>
+      <nav className={s.wrapper}>
          <a href='#hero'>
             <HouseIcon />
             Home

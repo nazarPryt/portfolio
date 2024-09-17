@@ -1,4 +1,4 @@
-.NavMenu {
+.wrapper {
    margin: 0;
    padding: 0 0 20px 0;
 
@@ -13,21 +13,24 @@
       font-family: var(--nav-font), sans-serif;
       font-size: 16px;
       font-weight: 400;
-      color: var(--nav-color);
+      color: var(--text-link-color);
       white-space: nowrap;
+
+      border-radius: 10px;
 
       transition: 0.3s;
 
       &:hover {
-         color: var(--nav-hover-color);
+         color: var(--text-color-primary);
       }
    }
 
    .active {
-      color: var(--nav-hover-color);
+      color: var(--text-color-primary);
+      background: var(--text-link-hover);
 
       &:focus {
-         color: var(--nav-hover-color);
+         color: var(--text-link-hover);
       }
    }
 }
