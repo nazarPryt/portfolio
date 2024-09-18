@@ -10,9 +10,15 @@
    min-height: 100vh;
    padding: 60px 0;
 
-   color: var(--text-color-primary);
+   &:before {
+      content: '';
 
-   background-color: var(--bg-primary);
+      position: absolute;
+      z-index: 2;
+      inset: 0;
+
+      background: color-mix(in srgb, var(--bg-primary), transparent 70%);
+   }
 
    img {
       position: absolute;
@@ -25,5 +31,22 @@
       height: 100%;
 
       object-fit: cover;
+   }
+
+   div {
+      position: relative;
+      z-index: 3;
+
+      h1 {
+         margin-bottom: toRem(5);
+         font-size: toRem(64);
+         font-weight: 700;
+      }
+
+      p {
+         display: inline-block;
+         font-size: toRem(26);
+         border-bottom: 2px solid red;
+      }
    }
 }

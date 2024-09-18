@@ -10,19 +10,20 @@ body {
    scroll-behavior: smooth;
 
    font-family: var(--default-font), sans-serif;
-   line-height: 1;
-   color: var(--text-color);
+   line-height: 1.2;
+   color: var(--text-color-primary);
+   text-rendering: optimizeSpeed;
 
-   background-color: var(--background-color);
+   background-color: var(--bg-primary);
 }
 
 a {
-   color: var(--accent-color);
+   color: var(--color-ui-primary);
    text-decoration: none;
    transition: 0.3s;
 
    &:hover {
-      color: color-mix(in srgb, var(--accent-color), transparent 25%);
+      color: color-mix(in srgb, var(--color-ui-primary), transparent 25%);
       text-decoration: none;
    }
 }
@@ -37,6 +38,5 @@ h3,
 h4,
 h5,
 h6 {
-   font-family: var(--heading-font), sans-serif;
-   color: var(--heading-color);
+   margin: 0;
 }
