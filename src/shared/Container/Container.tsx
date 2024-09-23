@@ -1,7 +1,7 @@
 import s from './Container.module.scss'
-import {ComponentProps} from 'react'
+import {ComponentPropsWithoutRef} from 'react'
 
-export const Container = ({children, className, ...rest}: ComponentProps<'div'>) => {
+export const Container = ({children, className, ...rest}: ComponentPropsWithoutRef<'div'>) => {
    return (
       <div className={`${s.wrapper} ${className}`} {...rest}>
          {children}

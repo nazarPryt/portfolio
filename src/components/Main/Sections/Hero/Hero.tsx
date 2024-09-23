@@ -1,7 +1,7 @@
 import s from './Hero.module.scss'
 import Image from 'next/image'
 import heroBg from '@/public/bg/hero-bg.jpg'
-import {Container} from '@/Container'
+import {Container} from '../../../../shared/Container'
 
 export const Hero = () => {
    return (

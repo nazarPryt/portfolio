@@ -38,14 +38,14 @@
       z-index: 3;
 
       h1 {
-         margin-bottom: toRem(5);
-         font-size: toRem(64);
+         margin-bottom: rem(5);
+         font-size: rem(64);
          font-weight: 700;
       }
 
       p {
          display: inline-block;
-         font-size: toRem(26);
+         font-size: rem(26);
          border-bottom: 2px solid red;
       }
    }

@@ -1,6 +1,15 @@
-/*!* Fonts *!*/
-:root {
-   --default-font: Roboto;
-   --heading-font: Raleway;
-   --nav-font: Poppins;
-}
+// Minimum page width
+$minWidth: 320;
+
+// Web width (layout)
+$maxWidth: 1920;
+
+// Width of the bounding container (0 = no limit)
+$maxWidthContainer: 1170;
+
+// Total padding for container
+// (30 = 15px left and right, 0 = no padding)
+$containerPadding: 30;
+
+// First breakpoint trigger width
+$containerWidth: $maxWidthContainer + $containerPadding;

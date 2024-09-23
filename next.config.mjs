@@ -10,6 +10,7 @@ export default {
       prependData: `
       @import "functions.scss";
       @import "mixins.scss";
+      @import "_variables.scss";
     `,
    },
 }

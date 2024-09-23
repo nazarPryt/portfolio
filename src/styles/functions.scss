@@ -1,13 +1,16 @@
 @use 'sass:math';
 
-@function toRem($px) {
-   $result: math.div($px, 16) + rem;
-
+@function percent($px, $from) {
+   $result: math.div($px, $from) * 100%;
    @return $result;
 }
 
-@function toEm($px, $current: 16) {
-   $result: math.div($px, $current) + em;
+@function rem($px) {
+   $result: math.div($px, 16) + rem;
+   @return $result;
+}
 
+@function em($px, $current: 16) {
+   $result: math.div($px, $current) + em;
    @return $result;
 }
