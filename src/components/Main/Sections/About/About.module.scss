@@ -1,8 +1,8 @@
 .wrapper {
-   height: 100svh;
    background-color: #a8a9b4;
 
-   h2 {
-      @include adaptiveValue('font-size', 30, 15);
+   .box {
+      display: flex;
+      gap: rem(30);
    }
 }

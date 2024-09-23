@@ -1,0 +1,24 @@
+.wrapper {
+   margin-bottom: rem(60);
+   background-color: #a8a9b4;
+
+   h1 {
+      display: inline-block;
+      font-size: rem(32);
+      font-weight: 700;
+      position: relative;
+      margin-bottom: rem(30);
+      padding-bottom: rem(15);
+
+      &:after {
+         content: '';
+         display: inline-block;
+         position: absolute;
+         bottom: 0;
+         left: 0;
+         width: 100%;
+         height: rem(3);
+         background-color: var(--color-ui-primary);
+      }
+   }
+}

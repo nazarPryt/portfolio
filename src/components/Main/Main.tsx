@@ -5,7 +5,7 @@ import {About} from './Sections/About'
 export const Main = () => {
    return (
       <main className={s.wrapper}>
-         <Hero />
+         {/*<Hero />*/}
          <About />
       </main>
    )
