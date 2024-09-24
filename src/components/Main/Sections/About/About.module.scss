@@ -1,8 +1,37 @@
 .wrapper {
    background-color: #a8a9b4;
+   @include adaptiveValue('font-size', 16, 13);
 
    .box {
       display: flex;
-      gap: rem(30);
+      gap: em(30);
+
+      h2 {
+         font-size: em(24);
+         font-weight: 700;
+         margin-bottom: em(20);
+      }
+      p {
+         margin-bottom: em(30);
+      }
+      ul {
+         list-style: none;
+         display: flex;
+         flex-direction: column;
+
+         gap: em(10);
+         margin-bottom: em(30);
+
+         li {
+            display: flex;
+            align-items: center;
+            gap: em(10);
+         }
+      }
+   }
+   @media (max-width: $tablet) {
+      .box {
+         flex-direction: column;
+      }
    }
 }

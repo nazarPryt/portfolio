@@ -4,6 +4,7 @@ import {SectionIsAbout} from '@/shared/SectionIsAbout'
 import {Section} from '@/shared/Section'
 import Image from 'next/image'
 import myPhoto from '@/public/bg/my-profile-img.jpg'
+import {ChevronRight} from '@/icons/ChevronRight'
 
 export const About = () => {
    const p =
@@ -22,13 +23,28 @@ export const About = () => {
 
                   <ul>
                      <li>
-                        <b>Birthday:</b>1 May 1995
+                        <ChevronRight />
+                        <strong>Birthday:</strong>15 September 1990
                      </li>
                      <li>
-                        <b>Website:</b>www.example.com
+                        <ChevronRight />
+                        <strong>Website:</strong>www.example.com
                      </li>
                      <li>
-                        <b>Phone:</b>+123 456 7890
+                        <ChevronRight />
+                        <strong>Phone:</strong>+123 456 7890
+                     </li>
+                     <li>
+                        <ChevronRight />
+                        <strong>Degree:</strong>Master
+                     </li>
+                     <li>
+                        <ChevronRight />
+                        <strong>Email:</strong>email@example.com
+                     </li>
+                     <li>
+                        <ChevronRight />
+                        <strong>City:</strong>Caserta, Italy
                      </li>
                   </ul>
 

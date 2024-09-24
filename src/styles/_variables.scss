@@ -1,3 +1,4 @@
+@use 'sass:math';
 // Minimum page width
 $minWidth: 320;
 
@@ -5,11 +6,12 @@ $minWidth: 320;
 $maxWidth: 1920;
 
 // Width of the bounding container (0 = no limit)
-$maxWidthContainer: 1170;
+$maxWidthContainer: 0;
 
 // Total padding for container
 // (30 = 15px left and right, 0 = no padding)
-$containerPadding: 30;
+$containerPadding: 200;
+$minContainerPadding: 15;
 
 // First breakpoint trigger width
 $containerWidth: $maxWidthContainer + $containerPadding;
@@ -19,3 +21,49 @@ $pc: em($containerWidth); // PC, laptops, some tablets in horizontal position
 $tablet: em(991.98); // Tablets, some phones in horizontal position
 $mobile: em(767.98); // Phones L
 $mobileSmall: em(479.98); // Phones S
+
+// Adaptive type:
+// 1 = responsive (the container has no breakpoints),
+// 2 = by breakpoints (the container changes its width by breakpoints)
+$responsiveType: 1;
+@if ($responsiveType==1) {
+   // Responsive
+   .container {
+      @if ($maxWidthContainer>0) {
+         max-width: rem($containerWidth);
+         margin-inline: auto;
+      }
+      @if ($containerPadding>0) {
+         @if ($maxWidthContainer>0) {
+            padding: 0 rem(math.div($containerPadding, 2));
+         } @else {
+            @include adaptiveValue('padding-left', math.div($containerPadding, 2), 15);
+            @include adaptiveValue('padding-right', math.div($containerPadding, 2), 15);
+         }
+      }
+   }
+} @else {
+   // By breakpoints
+   .container {
+      margin: 0 auto;
+      @if ($maxWidthContainer>0) {
+         max-width: rem($maxWidthContainer);
+      } @else {
+         @if ($containerPadding>0) {
+            padding: 0 rem(math.div($containerPadding, 2));
+         }
+      }
+      @media (max-width: $pc) {
+         max-width: rem(970);
+      }
+      @media (max-width: $tablet) {
+         max-width: rem(750);
+      }
+      @media (max-width: $mobile) {
+         max-width: none;
+         @if ($containerPadding>0 and $maxWidthContainer>0) {
+            padding: 0 rem(math.div($containerPadding, 2));
+         }
+      }
+   }
+}
