@@ -1,8 +1,8 @@
 .wrapper {
-   @media (min-width: $pc) {
+   @media (min-width: $tablet) {
       margin-left: 300px;
    }
-   @media (max-width: $pc) {
+   @media (max-width: $tablet) {
       left: -100%;
    }
 }

@@ -17,7 +17,7 @@ $minContainerPadding: 15;
 $containerWidth: $maxWidthContainer + $containerPadding;
 
 // Break points
-$pc: em($containerWidth); // PC, laptops, some tablets in horizontal position
+$pc: em(1120); // PC, laptops, some tablets in horizontal position
 $tablet: em(991.98); // Tablets, some phones in horizontal position
 $mobile: em(767.98); // Phones L
 $mobileSmall: em(479.98); // Phones S

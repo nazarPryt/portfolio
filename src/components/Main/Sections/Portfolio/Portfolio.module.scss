@@ -1,0 +1,16 @@
+.wrapper {
+   background: mediumaquamarine;
+
+   .box {
+      display: flex;
+      flex-direction: column;
+      gap: rem(20);
+
+      div:nth-child(odd) {
+         flex-direction: row;
+      }
+      div:nth-child(even) {
+         flex-direction: row-reverse;
+      }
+   }
+}

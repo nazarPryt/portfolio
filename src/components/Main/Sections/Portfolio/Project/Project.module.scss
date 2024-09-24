@@ -1,0 +1,35 @@
+.wrapper {
+   position: relative;
+   display: flex;
+   flex-direction: row;
+   margin-bottom: rem(80);
+
+   .box {
+      width: 50%;
+      margin-top: em(20);
+      z-index: 10;
+
+      h2 {
+         margin-bottom: em(15);
+      }
+
+      article {
+         background-color: var(--color-ui-primary);
+         padding: rem(16);
+         border-radius: rem(16);
+         p {
+            margin-bottom: em(20);
+         }
+      }
+   }
+   .projectCover {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 66%;
+      box-shadow:
+         inset -1px 3px 8px 5px yellow,
+         2px 5px 16px 0px yellow,
+         5px 5px 15px 5px rgba(0, 0, 0, 0);
+   }
+}
