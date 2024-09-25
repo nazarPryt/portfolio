@@ -2,21 +2,19 @@ import s from './Portfolio.module.scss'
 import {Section} from '@/shared/Section'
 import {Container} from '@/shared/Container'
 import {SectionIsAbout} from '@/shared/SectionIsAbout'
-import {Project} from '@/components/Main/Sections/Portfolio/Project'
+import {Instareplica} from '@/components/Main/Sections/Portfolio/Projects/Instareplica'
 
 export const Portfolio = () => {
    const p =
-      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid animi architecto delectus dignissimos ea earum eligendi ipsam maxime, mollitia nihil odit perferendis provident quasi ratione recusandae saepe sapiente ut vel.'
+      'Here’s a selection of recent projects that showcase my skills in frontend development. Each project reflects my commitment to clean code, responsive design, and delivering engaging user experiences. Explore how I apply modern web technologies to create dynamic and functional websites.'
 
    return (
       <Section className={s.wrapper}>
          <Container>
-            <SectionIsAbout title={'My Projects'} p={p} />
+            <SectionIsAbout title={'My Latest Projects'} p={p} />
             <ul className={s.box}>
-               <Project />
-               <Project />
-               <Project />
-               <Project />
+               <Instareplica />
+               <Instareplica />
             </ul>
          </Container>
       </Section>

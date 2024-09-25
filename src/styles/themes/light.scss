@@ -1,13 +1,13 @@
 html[data-theme='light'] {
    /* Base Colors */
-   --bg-primary: #df1111;
+   --bg-primary: #f8f9fa; /* Soft light gray background */
 
-   --text-color-primary: black;
-   --text-color-secondary: white;
+   --text-color-primary: #2c3e50; /* Dark, desaturated blue for primary text */
+   --text-color-secondary: #7f8c8d; /* Muted gray for secondary text */
 
-   --text-link-color: #a8a9b4;
-   --color-ui-primary: #007bff;
+   --text-link-color: #3498db; /* Calming blue for links */
+   --color-ui-primary: #2980b9; /* Stronger blue for UI elements (buttons, highlights) */
 
    /* Active State */
-   --text-link-hover: blue;
+   --text-link-hover: #1abc9c;
 }
