@@ -12,10 +12,12 @@ export const Portfolio = () => {
       <Section className={s.wrapper}>
          <Container>
             <SectionIsAbout title={'My Projects'} p={p} />
-            <div className={s.box}>
+            <ul className={s.box}>
                <Project />
                <Project />
-            </div>
+               <Project />
+               <Project />
+            </ul>
          </Container>
       </Section>
    )

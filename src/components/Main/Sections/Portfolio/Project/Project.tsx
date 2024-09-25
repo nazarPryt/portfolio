@@ -6,8 +6,8 @@ export type ProjectProps = {}
 
 export const Project = () => {
    return (
-      <div className={s.wrapper}>
-         <div className={s.box}>
+      <li className={s.wrapper}>
+         <div className={s.projectDetails}>
             <h2>Instareplica</h2>
             <article>
                <p>
@@ -26,10 +26,14 @@ export const Project = () => {
                   while fostering authentic connections worldwide.'
                </p>
             </article>
+            <ul>
+               <li>React</li>
+               <li>Type Script</li>
+            </ul>
          </div>
          <div className={s.projectCover}>
             <Image src={projectOne} alt={'project one'} />
          </div>
-      </div>
+      </li>
    )
 }
