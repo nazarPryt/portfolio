@@ -2,6 +2,7 @@
    --default-font: Roboto;
    --heading-font: Raleway;
    --nav-font: Poppins;
+   scroll-behavior: smooth;
 }
 
 *,
@@ -13,8 +14,6 @@
 }
 
 body {
-   scroll-behavior: smooth;
-
    font-family: var(--default-font), sans-serif;
    line-height: 1.2;
    color: var(--text-color-primary);

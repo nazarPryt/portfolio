@@ -9,7 +9,6 @@ import {Link, usePathname} from '@/i18n/routing'
 
 export const Aside = () => {
    const pathname = usePathname()
-   const isActive = (path: any) => path === pathname
 
    return (
       <aside className={s.wrapper}>
@@ -21,7 +20,7 @@ export const Aside = () => {
 
          <SocialLinks />
 
-         <NavMenu />
+         <NavMenu pathname={pathname} />
          <ThemeSwitcher />
          <div>
             <Link href={pathname} locale='en'>

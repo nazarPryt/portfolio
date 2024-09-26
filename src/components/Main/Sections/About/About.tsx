@@ -10,7 +10,7 @@ export const About = () => {
    const p =
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur iusto tempora tempore. Accusamus atque beatae distinctio, dolore dolorum enim eos fugit harum inventore iusto odio omnis quibusdam quis quisquam veritatis!'
    return (
-      <Section className={s.wrapper}>
+      <Section className={s.wrapper} id={'about'}>
          <Container>
             <SectionIsAbout p={p} title={'About'} />
             <div className={s.box}>
