@@ -3,7 +3,7 @@ import {Container} from '@/shared/Container'
 import {SectionIsAbout} from '@/shared/SectionIsAbout'
 import {Section} from '@/shared/Section'
 import Image from 'next/image'
-import myPhoto from '@/public/bg/my-profile-img.jpg'
+import myPhoto from '../../../../../public/bg/my-profile-img.jpg'
 import {ChevronRight} from '@/icons/ChevronRight'
 
 export const About = () => {

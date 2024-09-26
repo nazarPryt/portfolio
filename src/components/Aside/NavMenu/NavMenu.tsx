@@ -9,28 +9,28 @@ import {EnvelopIcon} from '@/icons/EnvelopIcon'
 export const NavMenu = () => {
    return (
       <nav className={s.wrapper}>
-         <a href='#hero'>
+         <a href='/hero'>
             <HouseIcon />
             Home
          </a>
 
-         <a href='#about'>
+         <a href='/about'>
             <PersonIcon /> About
          </a>
 
-         <a href='#resume' className={s.active}>
+         <a href='/resume' className={s.active}>
             <TextIcon /> Resume
          </a>
 
-         <a href='#portfolio'>
+         <a href='/portfolio'>
             <ImagesIcon /> Portfolio
          </a>
 
-         <a href='#services'>
+         <a href='/services'>
             <HddStackIcon /> Services
          </a>
 
-         <a href='#contact'>
+         <a href='/contact'>
             <EnvelopIcon /> Contact
          </a>
       </nav>
