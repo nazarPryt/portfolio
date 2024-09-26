@@ -6,11 +6,11 @@ $minWidth: 320;
 $maxWidth: 1920;
 
 // Width of the bounding container (0 = no limit)
-$maxWidthContainer: 0;
+$maxWidthContainer: 1100;
 
 // Total padding for container
 // (30 = 15px left and right, 0 = no padding)
-$containerPadding: 200;
+$containerPadding: 30;
 $minContainerPadding: 15;
 
 // First breakpoint trigger width
@@ -25,7 +25,7 @@ $mobileSmall: em(479.98); // Phones S
 // Adaptive type:
 // 1 = responsive (the container has no breakpoints),
 // 2 = by breakpoints (the container changes its width by breakpoints)
-$responsiveType: 1;
+$responsiveType: 2;
 @if ($responsiveType==1) {
    // Responsive
    .container {
@@ -37,8 +37,8 @@ $responsiveType: 1;
          @if ($maxWidthContainer>0) {
             padding: 0 rem(math.div($containerPadding, 2));
          } @else {
-            @include adaptiveValue('padding-left', math.div($containerPadding, 2), 15);
-            @include adaptiveValue('padding-right', math.div($containerPadding, 2), 15);
+            @include adaptiveValue('padding-left', math.div($containerPadding, 2), $minContainerPadding);
+            @include adaptiveValue('padding-right', math.div($containerPadding, 2), $minContainerPadding);
          }
       }
    }

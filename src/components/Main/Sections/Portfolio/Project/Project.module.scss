@@ -3,6 +3,10 @@
    display: flex;
    margin-bottom: rem(80);
 
+   @media (min-width: $mobile) {
+      flex-direction: column;
+   }
+
    .projectDetails {
       background-color: transparent;
       width: 70%;
@@ -15,12 +19,12 @@
       article {
          background-color: var(--color-ui-primary);
          padding: rem(16);
-         margin-bottom: em(5);
+         margin-bottom: rem(5);
          border-radius: rem(16);
 
          p {
             text-align: left;
-            margin-bottom: em(20);
+            margin-bottom: rem(20);
          }
       }
       ul {

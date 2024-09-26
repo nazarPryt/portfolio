@@ -1,11 +1,11 @@
-import {Header} from '@/components/Header'
+import {Aside} from '@/components/Aside'
 import {Main} from '@/components/Main'
 import s from './page.module.scss'
 
 export default function HomePage() {
    return (
       <div className={s.wrapper}>
-         <Header />
+         <Aside />
          <Main />
       </div>
    )
