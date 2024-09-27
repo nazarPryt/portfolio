@@ -32,7 +32,9 @@ export default async function RootLayout({children, params: {locale}}: RootLayou
       >
          <body>
             <AppThemeProvider defaultTheme={theme} enableColorScheme themes={['light', 'dark', 'system']}>
-               <NextIntlClientProvider messages={messages}>{children}</NextIntlClientProvider>
+               <NextIntlClientProvider locale={locale} messages={messages}>
+                  {children}
+               </NextIntlClientProvider>
             </AppThemeProvider>
          </body>
       </html>

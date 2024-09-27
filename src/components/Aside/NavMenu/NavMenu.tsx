@@ -1,9 +1,11 @@
+'use client'
 import s from './NavMenu.module.scss'
 import {HouseIcon} from '@/icons/HouseIcon'
 import {PersonIcon} from '@/icons/PersonIcon'
 import {ImagesIcon} from '@/icons/ImagesIcon'
 import {HddStackIcon} from '@/icons/HddStackIcon'
 import {EnvelopIcon} from '@/icons/EnvelopIcon'
+import {usePathname} from '@/i18n/routing'
 
 const NavLinks = [
    {name: 'Home', path: '/', icon: <HouseIcon />},
@@ -13,8 +15,9 @@ const NavLinks = [
    {name: 'Contact', path: '#contact', icon: <EnvelopIcon />},
 ]
 
-export const NavMenu = ({pathname}: {pathname: string}) => {
-   const isActive = (path: any) => path === pathname
+export const NavMenu = () => {
+   const pathname = usePathname()
+   const isActive = (path: string) => path === pathname
 
    return (
       <nav className={s.wrapper}>

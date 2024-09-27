@@ -1,6 +1,14 @@
 {
-   "HomePage": {
-      "title": "Hello world!",
-      "about": "Go to the about page"
+   "Aside": {
+      "nav": {
+         "home": "Home",
+         "about": "About"
+      },
+      "title": "sdfsdf!",
+      "about": "dfgsdfsdfsdf"
+   },
+   "LocaleSwitcher": {
+      "label": "Change language",
+      "locale": "{locale, select, de {🇩🇪 Deutsch} en {🇺🇸 English} other {Unknown}}"
    }
 }

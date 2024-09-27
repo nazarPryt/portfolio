@@ -1,15 +1,12 @@
-'use client'
-import s from './Aside.module.scss'
 import Image from 'next/image'
 import myProfileImg from '../../../public/bg/my-profile-img.jpg'
 import {SocialLinks} from './SocialLinks'
 import {NavMenu} from './NavMenu'
 import {ThemeSwitcher} from './ThemeSwitcher'
-import {Link, usePathname} from '@/i18n/routing'
+import {LocaleSwitcher} from '@/shared/LanguageSwitcher'
+import s from './Aside.module.scss'
 
 export const Aside = () => {
-   const pathname = usePathname()
-
    return (
       <aside className={s.wrapper}>
          <div className={s.profileImg}>
@@ -20,16 +17,17 @@ export const Aside = () => {
 
          <SocialLinks />
 
-         <NavMenu pathname={pathname} />
+         <NavMenu />
          <ThemeSwitcher />
-         <div>
-            <Link href={pathname} locale='en'>
-               🏴󠁧󠁢󠁥󠁮󠁧󠁿 English
-            </Link>
-            <Link href={pathname} locale='de'>
-               🇫🇷 Français
-            </Link>
-         </div>
+         {/*<div>*/}
+         {/*   <Link href={pathname} locale='en'>*/}
+         {/*      🏴󠁧󠁢󠁥󠁮󠁧󠁿 English*/}
+         {/*   </Link>*/}
+         {/*   <Link href={pathname} locale='de'>*/}
+         {/*      🇫🇷 Français*/}
+         {/*   </Link>*/}
+         {/*</div>*/}
+         <LocaleSwitcher />
       </aside>
    )
 }
