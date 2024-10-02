@@ -5,6 +5,7 @@ import {SocialLinks} from './SocialLinks'
 import {NavMenu} from './NavMenu'
 import {ThemeSwitcher} from './ThemeSwitcher'
 import {LanguageSwitcher} from '@/components/Aside/LanguageSwitcher'
+import LocaleSwitcher from '@/components/Aside/LocaleSwitcher'
 
 export const Aside = () => {
    return (
@@ -17,6 +18,7 @@ export const Aside = () => {
          <NavMenu />
          <ThemeSwitcher />
          <LanguageSwitcher />
+         <LocaleSwitcher />
       </aside>
    )
 }

@@ -2,5 +2,17 @@
    "HomePage": {
       "title": "Hello world!",
       "about": "Go to the about page"
+   },
+   "NotFoundPage": {
+      "description": "Please double-check the browser address bar or use the navigation to go to a known page.",
+      "title": "Page not found"
+   },
+   "Error": {
+      "description": "<p>We've unfortunately encountered an error.</p><p>You can try to <retry>reload the page</retry> you were visiting.</p>",
+      "title": "Something went wrong!"
+   },
+   "LocaleSwitcher": {
+      "label": "Change language",
+      "locale": "{locale, select, de {🇩🇪 Deutsch} en {🇺🇸 English} other {Unknown}}"
    }
 }
