@@ -24,6 +24,7 @@ interface RootLayoutProps {
 export default async function RootLayout({children, params: {locale}}: RootLayoutProps) {
    const theme = cookies().get('__theme__')?.value || 'system'
    const messages = await getMessages()
+
    return (
       <html
          suppressHydrationWarning

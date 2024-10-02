@@ -1,2 +1,25 @@
-.ThemeSwitcher {
+.wrapper {
+   display: flex;
+   gap: 5px;
+   background-color: #a8a9b4;
+   padding: 5px 10px;
+   border-radius: 50px;
+
+   button {
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.5s ease;
+      padding: 3px 10px;
+      background-color: gray;
+
+      svg {
+         color: white;
+      }
+   }
+   .selected {
+      transition: 300ms ease-out;
+      border-radius: 0.3em;
+      background-color: var(--color-ui-primary);
+      box-shadow: 0 2px 13px 0 var(--bg-primary-color);
+   }
 }
