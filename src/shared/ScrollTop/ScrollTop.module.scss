@@ -1,0 +1,23 @@
+.wrapper {
+   cursor: pointer;
+
+   position: fixed;
+   z-index: 99999;
+   right: 15px;
+   bottom: rem(15);
+
+   width: rem(44);
+   height: rem(44);
+
+   visibility: visible;
+   opacity: 1;
+   background-color: var(--color-ui-primary);
+   border: none;
+   border-radius: 50px;
+
+   transition: all 0.4s;
+
+   &:hover {
+      background-color: color-mix(in srgb, var(--color-ui-primary) 90%, white 15%);
+   }
+}

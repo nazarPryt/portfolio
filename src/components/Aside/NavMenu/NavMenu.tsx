@@ -1,13 +1,14 @@
 'use client'
-import s from './NavMenu.module.scss'
 import {HouseIcon} from '@/icons/HouseIcon'
 import {PersonIcon} from '@/icons/PersonIcon'
 import {ImagesIcon} from '@/icons/ImagesIcon'
 import {HddStackIcon} from '@/icons/HddStackIcon'
 import {EnvelopIcon} from '@/icons/EnvelopIcon'
 import {usePathname} from '@/i18n/routing'
-import {ReactNode, useEffect, useState} from 'react'
+import {ReactNode, useEffect} from 'react'
 import Link from 'next/link'
+import {useClient} from '@/shared/useClient'
+import s from './NavMenu.module.scss'
 
 type NavLink = {
    name: string
@@ -24,20 +25,17 @@ const NavLinks: Array<NavLink> = [
 
 export const NavMenu = () => {
    const pathname = usePathname()
-   const [isClient, setIsClient] = useState(false) // State to track if we are on the client
-
-   // useEffect to set client-side state
-   useEffect(() => {
-      setIsClient(true)
-   }, [])
+   const isClient = useClient()
 
    const isActive = (path: any) => {
       if (!isClient) return false
+
       if (path === '/#home') {
          return window.scrollY < 300
       }
       if (path.startsWith('#')) {
          const section = document.querySelector(path)
+
          if (!section) return false
          const position = window.scrollY + 200
          return position >= section.offsetTop && position <= section.offsetTop + section.offsetHeight
@@ -47,12 +45,13 @@ export const NavMenu = () => {
 
    const handleClick = (event: any, path: string) => {
       if (path === '/#home') {
-         event.preventDefault() // Prevent default link behavior
+         event.preventDefault()
          window.scrollTo({top: 0, behavior: 'smooth'}) // Smooth scroll to top
       } else if (path.startsWith('#')) {
          // Prevent default link behavior for other sections to ensure smooth scrolling
          event.preventDefault()
          const section = document.querySelector(path)
+
          if (section) {
             section.scrollIntoView({behavior: 'smooth'}) // Smooth scroll to the section
          }

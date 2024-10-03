@@ -4,20 +4,11 @@ import {useTheme} from 'next-themes'
 import {MoonIcon} from '@/icons/MoonIcon'
 import {SunIcon} from '@/icons/SunIcon'
 import {GearIcon} from '@/icons/GearIcon'
-import {useEffect, useState} from 'react'
+import {useClient} from '@/shared/useClient'
 
 export const ThemeSwitcher = () => {
    const {setTheme, theme} = useTheme()
-   // const [mounted, setMounted] = useState(false)
-   //
-   // // Ensure the component only renders on the client side
-   // useEffect(() => {
-   //    setMounted(true)
-   // }, [])
-   //
-   // if (!mounted) {
-   //    return null // Don't render on the server
-   // }
+   const isClient = useClient()
 
    const themes = [
       {name: 'light', icon: <SunIcon />},
@@ -28,7 +19,7 @@ export const ThemeSwitcher = () => {
    return (
       <div className={s.wrapper}>
          {themes.map(({name, icon}) => (
-            <button key={name} className={theme === name ? s.selected : ''} onClick={() => setTheme(name)}>
+            <button key={name} className={isClient && theme === name ? s.selected : ''} onClick={() => setTheme(name)}>
                {icon}
             </button>
          ))}

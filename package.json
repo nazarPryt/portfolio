@@ -7,7 +7,7 @@
       "dev": "next dev",
       "build": "next build",
       "start": "next start",
-      "lint": "next lint",
+      "lint": "stylelint --fix src/{,*/}*.{scss,css} --allow-empty-input",
       "create": "node createComponent.js"
    },
    "dependencies": {
