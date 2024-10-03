@@ -6,9 +6,16 @@ import {ImagesIcon} from '@/icons/ImagesIcon'
 import {HddStackIcon} from '@/icons/HddStackIcon'
 import {EnvelopIcon} from '@/icons/EnvelopIcon'
 import {usePathname} from '@/i18n/routing'
+import {ReactNode, useEffect, useState} from 'react'
+import Link from 'next/link'
 
-const NavLinks = [
-   {name: 'Home', path: '/', icon: <HouseIcon />},
+type NavLink = {
+   name: string
+   path: string
+   icon: ReactNode
+}
+const NavLinks: Array<NavLink> = [
+   {name: 'Home', path: '/#home', icon: <HouseIcon />},
    {name: 'About', path: '#about', icon: <PersonIcon />},
    {name: 'Portfolio', path: '#portfolio', icon: <ImagesIcon />},
    {name: 'Services', path: '#services', icon: <HddStackIcon />},
@@ -17,18 +24,77 @@ const NavLinks = [
 
 export const NavMenu = () => {
    const pathname = usePathname()
-   const isActive = (path: any) => path === pathname
+   const [isClient, setIsClient] = useState(false) // State to track if we are on the client
+
+   // useEffect to set client-side state
+   useEffect(() => {
+      setIsClient(true)
+   }, [])
+
+   const isActive = (path: any) => {
+      if (!isClient) return false
+      if (path === '/#home') {
+         return window.scrollY < 300
+      }
+      if (path.startsWith('#')) {
+         const section = document.querySelector(path)
+         if (!section) return false
+         const position = window.scrollY + 200
+         return position >= section.offsetTop && position <= section.offsetTop + section.offsetHeight
+      }
+      return false
+   }
+
+   const handleClick = (event: any, path: string) => {
+      if (path === '/#home') {
+         event.preventDefault() // Prevent default link behavior
+         window.scrollTo({top: 0, behavior: 'smooth'}) // Smooth scroll to top
+      } else if (path.startsWith('#')) {
+         // Prevent default link behavior for other sections to ensure smooth scrolling
+         event.preventDefault()
+         const section = document.querySelector(path)
+         if (section) {
+            section.scrollIntoView({behavior: 'smooth'}) // Smooth scroll to the section
+         }
+      }
+   }
+
+   useEffect(() => {
+      if (!isClient) return
+
+      const handleScroll = () => {
+         const navLinks = document.querySelectorAll('.navmenu a')
+         navLinks.forEach(link => {
+            if (isActive(link.getAttribute('href'))) {
+               link.classList.add(s.active)
+            } else {
+               link.classList.remove(s.active)
+            }
+         })
+      }
+
+      window.addEventListener('scroll', handleScroll)
+      window.addEventListener('load', handleScroll)
+
+      return () => {
+         window.removeEventListener('scroll', handleScroll)
+         window.removeEventListener('load', handleScroll)
+      }
+   }, [isClient, pathname])
 
    return (
-      <nav className={s.wrapper}>
-         {NavLinks.map(link => {
-            return (
-               <a key={link.name} href={link.path} className={isActive(link.path) ? s.active : ''}>
-                  {link.icon}
-                  {link.name}
-               </a>
-            )
-         })}
+      <nav className={`${s.wrapper} navmenu`}>
+         {NavLinks.map(link => (
+            <Link
+               key={link.name}
+               href={link.path}
+               onClick={e => handleClick(e, link.path)}
+               className={isActive(link.path) ? s.active : ''}
+            >
+               {link.icon}
+               {link.name}
+            </Link>
+         ))}
       </nav>
    )
 }

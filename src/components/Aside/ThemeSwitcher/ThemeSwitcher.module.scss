@@ -1,25 +1,32 @@
 .wrapper {
    display: flex;
-   gap: 5px;
+   gap: rem(5);
    background-color: #a8a9b4;
-   padding: 5px 10px;
+   padding: rem(5) rem(10);
    border-radius: 50px;
 
    button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
       border: none;
       cursor: pointer;
       transition: background-color 0.5s ease;
       padding: 3px 10px;
+      border-radius: 50px;
       background-color: gray;
 
       svg {
          color: white;
+      }
+      &:hover {
+         background-color: color-mix(in srgb, var(--color-ui-primary) 60%, white 15%);
       }
    }
    .selected {
       transition: 300ms ease-out;
       border-radius: 0.3em;
       background-color: var(--color-ui-primary);
-      box-shadow: 0 2px 13px 0 var(--bg-primary-color);
+      box-shadow: 0 rem(2) rem(13) 0 var(--bg-primary-color);
    }
 }

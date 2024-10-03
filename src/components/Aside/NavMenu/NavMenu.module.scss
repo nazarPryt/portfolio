@@ -27,9 +27,5 @@
    .active {
       color: var(--text-color-primary);
       background: var(--text-link-hover);
-
-      &:focus {
-         color: var(--text-link-hover);
-      }
    }
 }
