@@ -24,6 +24,13 @@ export default async function RootLayout({children, params: {locale}}: Props) {
          lang={locale}
          className={`${navFont.variable} ${defaultFont.variable} ${headingFont.variable}`}
       >
+         <head>
+            <link
+               id='favicon'
+               rel='icon'
+               href='/favicons/light-favicon-32x32.png' // Default favicon
+            />
+         </head>
          <body>
             <Providers>{children}</Providers>
          </body>
