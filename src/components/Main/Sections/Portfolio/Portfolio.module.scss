@@ -9,6 +9,10 @@
 
       li:nth-child(odd) {
          flex-direction: row;
+
+         @media (max-width: $mobile) {
+            flex-direction: column-reverse;
+         }
       }
       li:nth-child(even) {
          flex-direction: row-reverse;
@@ -19,6 +23,10 @@
          div:nth-of-type(2) {
             right: auto;
             left: 0;
+         }
+
+         @media (max-width: $mobile) {
+            flex-direction: column-reverse;
          }
       }
    }

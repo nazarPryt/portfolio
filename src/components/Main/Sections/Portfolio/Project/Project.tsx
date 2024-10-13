@@ -1,6 +1,6 @@
 import s from './Project.module.scss'
 import Image, {StaticImageData} from 'next/image'
-import {ReactElement, ReactNode} from 'react'
+import {ReactNode} from 'react'
 
 type Props = {
    cover: StaticImageData

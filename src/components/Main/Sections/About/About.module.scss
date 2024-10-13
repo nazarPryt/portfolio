@@ -1,5 +1,5 @@
 .wrapper {
-   background-color: #a8a9b4;
+   background-color: var(--bg-primary);
 
    .box {
       display: flex;
@@ -7,27 +7,30 @@
 
       h2 {
          @include adaptiveValue('font-size', 36, 26);
-         font-weight: 700;
+
          margin-bottom: em(20);
+         font-weight: 700;
       }
       p {
          margin-bottom: em(30);
       }
       ul {
-         list-style: none;
          display: flex;
          flex-direction: column;
-
          gap: em(10);
+
          margin-bottom: em(30);
+
+         list-style: none;
 
          li {
             display: flex;
-            align-items: center;
             gap: em(10);
+            align-items: center;
          }
       }
    }
+
    @media (max-width: $tablet) {
       .box {
          flex-direction: column;
