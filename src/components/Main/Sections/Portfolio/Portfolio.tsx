@@ -11,6 +11,8 @@ export const Portfolio = () => {
          <ul className={s.box}>
             <Instareplica />
             <Instareplica />
+            <Instareplica />
+            <Instareplica />
          </ul>
       </Section>
    )
