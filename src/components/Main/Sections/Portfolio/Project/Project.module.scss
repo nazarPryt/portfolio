@@ -2,57 +2,61 @@
    position: relative;
 
    display: grid;
+   grid-gap: rem(10);
    grid-template-columns: repeat(12, 1fr);
-   gap: 10px;
    align-items: center;
 
-   &:not(:last-of-type) {
-      @include adaptiveValue('margin-bottom', 50, 10);
-   }
+   &:nth-of-type(odd) {
+      .projectContent {
+         grid-column: 4 / -1;
+         text-align: right;
 
-   .projectContent {
-      position: relative;
-      z-index: 1;
-      grid-column: 1 / 7;
-      grid-row: 1 / -1;
+         @media (max-width: $tablet) {
+            grid-column: 5 / -1;
+         }
 
-      h2 {
-         margin-bottom: em(15);
-         color: var(--text-color-primary);
-      }
-
-      article {
-         margin-bottom: rem(5);
-         padding: rem(16);
-         background-color: var(--color-ui-primary);
-         border-radius: rem(16);
-
-         p {
-            margin-bottom: rem(20);
+         @media (max-width: $mobile) {
+            grid-column: 1 / -1;
             text-align: left;
          }
       }
 
-      ul {
-         display: flex;
-         flex-wrap: wrap;
-         gap: em(5);
+      .projectTechList {
+         justify-content: flex-end;
 
-         font-size: rem(14);
-         list-style: none;
-
-         li {
-            padding: em(5) em(10);
-            background-color: gray;
-            border-radius: rem(16);
+         @media (max-width: $mobile) {
+            justify-content: flex-start;
          }
       }
 
-      @media (max-width: 1080px) {
+      .projectLinks {
+         justify-content: flex-end;
+
+         @media (max-width: $mobile) {
+            justify-content: flex-start;
+         }
+      }
+
+      .projectImage {
+         grid-column: 1 / 8;
+
+         @media (max-width: $mobile) {
+            grid-column: 1 / -1;
+         }
+      }
+   }
+
+   .projectContent {
+      position: relative;
+      z-index: 2;
+      grid-column: 1 / 9;
+      grid-row: 1 / -1;
+
+      @media (max-width: $tablet) {
          grid-column: 1 / 9;
       }
 
-      @media (max-width: 768px) {
+      @media (max-width: $mobile) {
          z-index: 5;
 
          display: flex;
@@ -61,22 +65,131 @@
          justify-content: center;
 
          height: 100%;
-         padding: 40px 40px 30px;
-      }
-
-      @media (max-width: 480px) {
-         padding: 30px 25px 20px;
       }
    }
+
+   .projectOverline {
+      margin: rem(10) 0;
+      color: var(--color-ui-primary);
+   }
+
+   .projectTitle {
+      @include adaptiveValue('margin-bottom', 20, 5);
+   }
+
+   .projectDescription {
+      position: relative;
+      z-index: 2;
+
+      padding: rem(25);
+
+      line-height: 1.8;
+      color: var(--text-color-primary);
+
+      background-color: var(--bg-secondary);
+      border-radius: 4px;
+
+      strong {
+         color: var(--text-color-secondary);
+      }
+
+      @media (max-width: $mobile) {
+         padding: rem(20) 0;
+         background-color: transparent;
+         box-shadow: none;
+      }
+   }
+
+   .projectTechList {
+      display: flex;
+      flex-wrap: wrap;
+      gap: em(20);
+      list-style: none;
+
+      @include adaptiveValue('margin-top', 20, 5);
+
+      li {
+         padding: 3px 5px;
+
+         color: var(--text-color-primary);
+         white-space: nowrap;
+
+         background-color: var(--bg-secondary);
+         border-radius: em(10);
+      }
+   }
+
+   .projectLinks {
+      display: flex;
+      align-items: center;
+      margin-top: rem(10);
+      margin-left: rem(-10);
+
+      a {
+         padding: rem(10);
+
+         svg {
+            width: rem(20);
+            height: rem(20);
+         }
+      }
+   }
+
    .projectImage {
       position: relative;
       grid-column: 6 / -1;
       grid-row: 1 / -1;
 
-      @media (max-width: 768px) {
+      a {
+         width: 100%;
+         height: 100%;
+         border-radius: 4px;
+         transition: var(--transition);
+
+         &:hover,
+         &:focus {
+            background: transparent;
+            outline: 0;
+
+            &:before,
+            .img {
+               background: transparent;
+               filter: none;
+            }
+         }
+
+         &:before {
+            content: '';
+
+            position: absolute;
+            z-index: 1;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+
+            width: 100%;
+            height: 100%;
+
+            background-color: var(--bg-secondary);
+            mix-blend-mode: screen;
+         }
+      }
+
+      .img {
+         filter: grayscale(100%) contrast(1) brightness(90%);
+         border-radius: 4px;
+         mix-blend-mode: multiply;
+
+         @media (max-width: $mobile) {
+            filter: grayscale(100%) contrast(1) brightness(50%);
+         }
+      }
+
+      @media (max-width: $mobile) {
          grid-column: 1 / -1;
          height: 100%;
-         opacity: 0.25;
+         opacity: 0.3;
       }
    }
 }
