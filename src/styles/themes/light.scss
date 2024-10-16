@@ -1,14 +1,11 @@
 html[data-theme='light'] {
-   /* Base Colors */
-   --bg-primary: #f8f9fa;
-   --bg-secondary: #a8c5ff;
+   --bg-primary: #f9f9f9;
+   --bg-secondary: #eaeaea;
+   --bg-tertiary: #d1d1d1;
 
-   --text-color-primary: #2c3e50;
-   --text-color-secondary: #7f8c8d;
+   --text-color-primary: #222222;
+   --text-color-secondary: #555555;
+   --text-color-tertiary: #888888;
 
-   --text-link-color: #3498db;
-   --color-ui-primary: #007bff;
-
-   /* Active State */
-   --text-link-hover: #1abc9c;
+   --color-ui-primary: #005bb5;
 }

@@ -1,12 +1,11 @@
 'use client'
 import s from './Aside.module.scss'
 import Image from 'next/image'
-import myProfileImg from '../../../public/bg/my-profile-img.jpg'
+import myProfileImg from '@/public/bg/my-profile-img.jpg'
 import {SocialLinks} from './SocialLinks'
 import {NavMenu} from './NavMenu'
 import {ThemeSwitcher} from './ThemeSwitcher'
-import {LanguageSwitcher} from '@/components/Aside/LanguageSwitcher'
-import LocaleSwitcher from '@/components/Aside/LocaleSwitcher'
+import {LocaleSwitcher} from '@/components/Aside/LocaleSwitcher'
 import {BurgerClosed} from '@/icons/BurgerClosed'
 import {CloseIcon} from '@/icons/CloseIcon'
 import {useState} from 'react'
@@ -30,7 +29,6 @@ export const Aside = () => {
          <SocialLinks />
          <NavMenu />
          <ThemeSwitcher />
-         <LanguageSwitcher />
          <LocaleSwitcher />
       </aside>
    )

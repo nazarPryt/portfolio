@@ -6,6 +6,8 @@
    align-items: center;
    justify-content: center;
 
+   @include adaptiveValue('font-size', 25, 10);
+
    width: 100%;
    min-height: 100vh;
    margin-bottom: rem(30);
@@ -36,19 +38,22 @@
    div {
       position: relative;
       z-index: 3;
+
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      align-items: center;
+
       color: white;
       text-align: center;
 
       h1 {
-         margin-bottom: rem(5);
-         font-size: rem(64);
+         font-size: em(64);
          font-weight: 700;
       }
 
       p {
-         display: inline-block;
-         font-size: rem(26);
-         border-bottom: 2px solid red;
+         font-size: em(26);
       }
    }
 }

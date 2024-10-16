@@ -1,14 +1,11 @@
 html[data-theme='dark'] {
-   /* Base Colors */
-   --bg-primary: black;
-   --bg-secondary: #112240;
+   --bg-primary: #1a1a1a;
+   --bg-secondary: #252525;
+   --bg-tertiary: #3e3d3d;
 
-   --text-color-primary: #aab5d8;
-   --text-color-secondary: white;
+   --text-color-primary: #e0e0e0;
+   --text-color-secondary: #afafaf;
+   --text-color-tertiary: #9c9a9a;
 
-   --text-link-color: #a8a9b4;
-   --color-ui-primary: #007bff;
-
-   /* Active State */
-   --text-link-hover: #a8a9b4;
+   --color-ui-primary: #598ff8;
 }

@@ -1,6 +1,7 @@
 .wrapper {
    margin: 0;
    padding: 0 0 em(20) 0;
+
    @include adaptiveValue('font-size', 16, 14);
 
    a {
@@ -12,20 +13,20 @@
 
       font-family: var(--nav-font), sans-serif;
       font-weight: 400;
-      color: var(--text-link-color);
+      color: var(--text-color-primary);
       white-space: nowrap;
 
-      border-radius: 10px;
+      border-radius: rem(10);
 
       transition: 0.3s;
 
       &:hover {
-         color: var(--text-color-primary);
+         color: var(--text-color-secondary);
       }
    }
 
    .active {
       color: var(--text-color-primary);
-      background: var(--text-link-hover);
+      background: var(--bg-tertiary);
    }
 }

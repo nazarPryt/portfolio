@@ -84,37 +84,36 @@
       padding: rem(25);
 
       line-height: 1.8;
-      color: var(--text-color-primary);
+      color: var(--text-color-secondary);
 
       background-color: var(--bg-secondary);
       border-radius: 4px;
 
       strong {
-         color: var(--text-color-secondary);
+         color: var(--text-color-primary);
       }
 
       @media (max-width: $mobile) {
          padding: rem(20) 0;
          background-color: transparent;
-         box-shadow: none;
       }
    }
 
    .projectTechList {
       display: flex;
       flex-wrap: wrap;
-      gap: em(20);
+      gap: em(10);
       list-style: none;
 
       @include adaptiveValue('margin-top', 20, 5);
 
       li {
-         padding: 3px 5px;
+         padding: 4px 7px;
 
-         color: var(--text-color-primary);
+         color: var(--text-color-tertiary);
          white-space: nowrap;
 
-         background-color: var(--bg-secondary);
+         background-color: var(--bg-tertiary);
          border-radius: em(10);
       }
    }
@@ -139,12 +138,10 @@
       position: relative;
       grid-column: 6 / -1;
       grid-row: 1 / -1;
-
       a {
          width: 100%;
          height: 100%;
          border-radius: 4px;
-         transition: var(--transition);
 
          &:hover,
          &:focus {
@@ -155,6 +152,7 @@
             .img {
                background: transparent;
                filter: none;
+               transition: var(--transition);
             }
          }
 
@@ -171,18 +169,8 @@
             width: 100%;
             height: 100%;
 
-            background-color: var(--bg-secondary);
+            background-color: var(--bg-tertiary);
             mix-blend-mode: screen;
-         }
-      }
-
-      .img {
-         filter: grayscale(100%) contrast(1) brightness(90%);
-         border-radius: 4px;
-         mix-blend-mode: multiply;
-
-         @media (max-width: $mobile) {
-            filter: grayscale(100%) contrast(1) brightness(50%);
          }
       }
 

@@ -1,0 +1,16 @@
+.wrapper {
+   a {
+      padding: em(5) em(10);
+
+      font-size: em(20);
+      color: white;
+
+      border: em(1) solid white;
+      border-radius: em(5);
+
+      &:hover {
+         color: #d6d3d3;
+         border-color: #afafafff;
+      }
+   }
+}

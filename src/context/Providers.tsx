@@ -5,7 +5,7 @@ import {cookies} from 'next/headers'
 import {getMessages} from 'next-intl/server'
 
 export const Providers = async ({children}: {children: ReactNode}) => {
-   const theme = cookies().get('__theme__')?.value || 'system'
+   const theme = cookies().get('__theme__')?.value || 'dark'
    const messages = await getMessages()
 
    return (
