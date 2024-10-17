@@ -19,7 +19,7 @@ const NavLinks: Array<NavLink> = [
    {name: 'Home', path: '/#home', icon: <HouseIcon />},
    {name: 'About', path: '#about', icon: <PersonIcon />},
    {name: 'Portfolio', path: '#portfolio', icon: <ImagesIcon />},
-   {name: 'Services', path: '#services', icon: <HddStackIcon />},
+   // {name: 'Services', path: '#services', icon: <HddStackIcon />},
    {name: 'Contact', path: '#contact', icon: <EnvelopIcon />},
 ]
 
@@ -48,7 +48,6 @@ export const NavMenu = () => {
          event.preventDefault()
          window.scrollTo({top: 0, behavior: 'smooth'}) // Smooth scroll to top
       } else if (path.startsWith('#')) {
-         // Prevent default link behavior for other sections to ensure smooth scrolling
          event.preventDefault()
          const section = document.querySelector(path)
 
