@@ -23,6 +23,8 @@ body {
    text-rendering: optimizeSpeed;
 
    background-color: var(--bg-primary);
+
+   -webkit-tap-highlight-color: transparent;
 }
 
 a {
