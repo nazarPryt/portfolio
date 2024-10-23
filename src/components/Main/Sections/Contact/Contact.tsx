@@ -2,6 +2,8 @@
 import {Section} from '@/shared/Section'
 import {ChangeEvent, FormEvent, useState} from 'react'
 import s from './Contact.module.scss'
+import {Spinner} from '@/shared/Spinner'
+import {Modal} from '@/shared/Modal'
 
 export const Contact = () => {
    const p =
@@ -12,12 +14,15 @@ export const Contact = () => {
       message: '',
    })
    const [status, setStatus] = useState('')
+   const [open, setOpen] = useState(false)
 
    const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
       const {name, value} = e.target
       setFormData(prevData => ({...prevData, [name]: value}))
    }
-
+   const handleClose = () => {
+      setOpen(false)
+   }
    const handleSubmit = async (e: FormEvent) => {
       e.preventDefault()
       setStatus('Sending...')
@@ -32,6 +37,7 @@ export const Contact = () => {
 
       if (response.ok) {
          setStatus('Message sent successfully!')
+         setOpen(true)
          setFormData({name: '', email: '', message: ''})
       } else {
          setStatus('Something went wrong. Please try again.')
@@ -39,50 +45,56 @@ export const Contact = () => {
    }
 
    return (
-      <Section id={'contact'} title={'Contact me'} className={s.wrapper} p={p}>
-         <form onSubmit={handleSubmit}>
-            <label htmlFor='name'>
-               Name:
-               <input
-                  type='text'
-                  id='name'
-                  placeholder={'Your Name'}
-                  name='name'
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-               />
-            </label>
+      <>
+         <Modal title={'ok'} isOpen={open} handleClose={handleClose}>
+            <p>success</p>
+         </Modal>
+         <Section id={'contact'} title={'Contact me'} className={s.wrapper} p={p}>
+            <form onSubmit={handleSubmit}>
+               <label htmlFor='name'>
+                  Name:
+                  <input
+                     type='text'
+                     id='name'
+                     placeholder={'Your Name'}
+                     name='name'
+                     value={formData.name}
+                     onChange={handleChange}
+                     required
+                  />
+               </label>
 
-            <label htmlFor='email'>
-               Email:
-               <input
-                  type='email'
-                  id='email'
-                  placeholder={'Email'}
-                  name='email'
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-               />
-            </label>
+               <label htmlFor='email'>
+                  Email:
+                  <input
+                     type='email'
+                     id='email'
+                     placeholder={'Email'}
+                     name='email'
+                     value={formData.email}
+                     onChange={handleChange}
+                     required
+                  />
+               </label>
 
-            <label htmlFor='message'>
-               Message:
-               <textarea
-                  id='message'
-                  name='message'
-                  placeholder={'Message...'}
-                  value={formData.message}
-                  onChange={handleChange}
-                  required
-                  aria-required
-               />
-            </label>
+               <label htmlFor='message'>
+                  Message:
+                  <textarea
+                     id='message'
+                     name='message'
+                     placeholder={'Message...'}
+                     value={formData.message}
+                     onChange={handleChange}
+                     required
+                     aria-required
+                  />
+               </label>
 
-            <button type='submit'>Send Message</button>
-            <p>{status}</p>
-         </form>
-      </Section>
+               <button type='submit'>Send Message</button>
+               <p>{status}</p>
+            </form>
+            {status === 'Sending...' && <Spinner fullScreen={true} />}
+         </Section>
+      </>
    )
 }

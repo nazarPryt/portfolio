@@ -1,0 +1,54 @@
+.wrapper {
+   position: fixed;
+   z-index: 9999;
+   top: 0;
+   left: 0;
+
+   display: none;
+
+   width: 100vw;
+   height: 100vh;
+
+   &.open {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: rgba(0, 0, 0, 0.7);
+   }
+
+   .ModalContent {
+      position: relative;
+      transform: scale(0.5);
+
+      overflow: auto;
+
+      min-width: 436px;
+
+      color: inherit;
+
+      background-color: red;
+      border: 1px solid gray;
+      box-shadow: 0 0 70px 10px #000;
+
+      transition: 1s linear;
+
+      &.open {
+         transform: scale(1);
+         transition: 1s linear;
+      }
+   }
+   .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      margin-bottom: 10px;
+      padding: 12px 24px;
+
+      font-size: 20px;
+      font-weight: 700;
+
+      background-color: inherit;
+      border-bottom: 1px solid green;
+   }
+}
