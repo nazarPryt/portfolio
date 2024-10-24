@@ -1,17 +1,11 @@
 .wrapper {
-   position: fixed;
-   z-index: 997;
-   top: 0;
-   bottom: 0;
-   left: 0;
-
-   overflow-y: auto;
    display: flex;
    flex-direction: column;
    gap: rem(20);
    align-items: center;
 
    width: rem(300);
+   height: 100%;
    padding-inline: rem(15);
 
    color: var(--text-color-primary);
@@ -20,38 +14,6 @@
    border-right: 1px solid color-mix(in srgb, var(--text-color-primary), transparent 90%);
 
    transition: all ease-in-out 0.3s;
-
-   &.show {
-      left: 0;
-   }
-
-   .burger {
-      cursor: pointer;
-
-      position: fixed;
-      z-index: 9999;
-      top: 15px;
-      right: 15px;
-
-      display: none;
-      align-items: center;
-      justify-content: center;
-
-      width: rem(40);
-      height: rem(40);
-
-      color: white;
-
-      background-color: var(--color-ui-primary);
-      border: none;
-      border-radius: 50%;
-
-      transition: background-color 0.3s;
-
-      &:hover {
-         background-color: color-mix(in srgb, var(--color-ui-primary) 90%, white 15%);
-      }
-   }
 
    .profileImg {
       width: rem(120);
@@ -69,13 +31,5 @@
       font-size: rem(24);
       font-weight: 700;
       color: var(--text-color-secondary);
-   }
-
-   @media (max-width: $tablet) {
-      left: -100%;
-
-      .burger {
-         display: flex;
-      }
    }
 }

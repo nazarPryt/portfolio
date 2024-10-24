@@ -47,7 +47,7 @@ export const Contact = () => {
    return (
       <>
          <Modal title={'ok'} isOpen={open} handleClose={handleClose}>
-            <p>success</p>
+            <p>{status}</p>
          </Modal>
          <Section id={'contact'} title={'Contact me'} className={s.wrapper} p={p}>
             <form onSubmit={handleSubmit}>
@@ -91,7 +91,6 @@ export const Contact = () => {
                </label>
 
                <button type='submit'>Send Message</button>
-               <p>{status}</p>
             </form>
             {status === 'Sending...' && <Spinner fullScreen={true} />}
          </Section>

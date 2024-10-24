@@ -23,7 +23,11 @@ const NavLinks: Array<NavLink> = [
    {name: 'Contact', path: '#contact', icon: <EnvelopIcon />},
 ]
 
-export const NavMenu = () => {
+type Props = {
+   closeSideBar?: () => void
+}
+
+export const NavMenu = ({closeSideBar}: Props) => {
    const pathname = usePathname()
    const isClient = useClient()
 
@@ -44,6 +48,7 @@ export const NavMenu = () => {
    }
 
    const handleClick = (event: any, path: string) => {
+      closeSideBar && closeSideBar()
       if (path === '/#home') {
          event.preventDefault()
          window.scrollTo({top: 0, behavior: 'smooth'}) // Smooth scroll to top

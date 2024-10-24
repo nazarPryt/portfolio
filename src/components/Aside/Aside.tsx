@@ -6,28 +6,20 @@ import {SocialLinks} from './SocialLinks'
 import {NavMenu} from './NavMenu'
 import {ThemeSwitcher} from './ThemeSwitcher'
 import {LocaleSwitcher} from '@/components/Aside/LocaleSwitcher'
-import {BurgerClosed} from '@/icons/BurgerClosed'
-import {CloseIcon} from '@/icons/CloseIcon'
-import {useState} from 'react'
 
-export const Aside = () => {
-   const [isOpen, setIsOpen] = useState(false)
+type Props = {
+   closeSideBar?: () => void
+}
 
-   const handleToggle = () => {
-      setIsOpen(!isOpen)
-   }
-
+export const Aside = ({closeSideBar}: Props) => {
    return (
-      <aside className={`${s.wrapper} ${isOpen ? s.show : ''}`}>
-         <button onClick={handleToggle} className={s.burger}>
-            {isOpen ? <CloseIcon /> : <BurgerClosed />}
-         </button>
+      <aside className={s.wrapper}>
          <div className={s.profileImg}>
             <Image src={myProfileImg} alt={'portfolio photo'} />
          </div>
          <h1>Nazar Prytuliak</h1>
          <SocialLinks />
-         <NavMenu />
+         <NavMenu closeSideBar={closeSideBar} />
          <ThemeSwitcher />
          <LocaleSwitcher />
       </aside>

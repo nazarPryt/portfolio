@@ -2,8 +2,6 @@
    --default-font: Roboto;
    --heading-font: Raleway;
    --nav-font: Poppins;
-
-   --transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
 *,
@@ -12,6 +10,7 @@
    box-sizing: border-box;
    margin: 0;
    padding: 0;
+   transition: 0.1s all linear;
 }
 
 body {
@@ -26,7 +25,7 @@ body {
 
    -webkit-tap-highlight-color: transparent;
    &.isModalOpen {
-      overflow: clip;
+      overflow: hidden;
    }
 }
 
@@ -53,4 +52,20 @@ h5,
 h6 {
    margin: 0;
    font-family: var(--heading-font), sans-serif;
+}
+
+//~~~~-autofills for inputs
+//https://css-tricks.com/almanac/selectors/a/autofill/
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+   -webkit-box-shadow: 0 0 0 40rem #f5f5f5 inset;
+
+   -webkit-text-fill-color: black;
 }
