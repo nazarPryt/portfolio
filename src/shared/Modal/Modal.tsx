@@ -1,54 +1,45 @@
+import {
+   Dialog,
+   DialogClose,
+   DialogContent,
+   DialogOverlay,
+   DialogDescription,
+   DialogPortal,
+   DialogTitle,
+} from '@radix-ui/react-dialog'
+
 import s from './Modal.module.scss'
-
-import {MouseEvent, ReactNode, useEffect} from 'react'
-
-import {ReactPortal} from '@/shared/ReactPortal'
+import {ComponentProps} from 'react'
 import {CloseIcon} from '@/icons/CloseIcon'
 
-export type ModalProps = {children?: ReactNode; handleClose: () => void; isOpen: boolean; title: string}
+export type ModalProps = {
+   onClose?: () => void
+   open: boolean
+   title: string
+} & ComponentProps<'div'>
 
-export const Modal = ({children, handleClose, isOpen, title}: ModalProps) => {
-   const handleCloseModal = () => {
-      document.body.classList.remove('isModalOpen')
-      handleClose()
-   }
-   const onModalClick = (event: MouseEvent<HTMLElement>) => {
-      event.stopPropagation()
-   }
-
-   useEffect(() => {
-      isOpen && document.body.classList.add('isModalOpen')
-      const closeOnEscapeKey = (e: KeyboardEvent) => (e.key === 'Escape' ? handleClose() : null)
-
-      document.body.addEventListener('keydown', closeOnEscapeKey)
-      document.body.style.pointerEvents = ''
-
-      return () => {
-         document.body.removeEventListener('keydown', closeOnEscapeKey)
-         document.body.style.pointerEvents = 'auto'
-         document.body.classList.remove('isModalOpen')
-      }
-   }, [handleClose])
-
-   if (!isOpen) {
-      return null
+export const Modal = ({children, title, onClose, open = false}: ModalProps) => {
+   function handleModalClosed() {
+      onClose?.()
    }
 
    return (
-      <ReactPortal wrapperId={'react-portal-modal-container'}>
-         <div className={`${s.wrapper} ${isOpen && s.open}`} onClick={onModalClick}>
-            <div className={`${s.ModalContent} ${isOpen && s.open}`}>
-               <div>
-                  <div className={s.header}>
-                     {title}
-                     <button onClick={handleCloseModal}>
+      <Dialog onOpenChange={handleModalClosed} open={open}>
+         <DialogPortal>
+            <DialogOverlay className={s.Overlay} />
+            <DialogContent className={s.Content}>
+               <DialogTitle asChild>
+                  <header className={s.header}>
+                     <h3>{title}</h3>
+                     <DialogClose className={s.closeButton} aria-label='Close'>
                         <CloseIcon />
-                     </button>
-                  </div>
-               </div>
-               {children}
-            </div>
-         </div>
-      </ReactPortal>
+                     </DialogClose>
+                  </header>
+               </DialogTitle>
+               <DialogDescription asChild />
+               <div className={s.contentBox}>{children}</div>
+            </DialogContent>
+         </DialogPortal>
+      </Dialog>
    )
 }

@@ -1,14 +1,15 @@
 'use client'
 import {Aside} from '@/components/Aside'
-import {elastic as Menu} from 'react-burger-menu'
-import s from './AsideMenu.module.scss'
 import {useState} from 'react'
+import {Burger} from '@/components/Aside/Burger'
+import s from './AsideMenu.module.scss'
 
 export const AsideMenu = () => {
-   const [isOpen, setOpen] = useState(false)
+   const [open, setOpen] = useState(false)
 
-   const handleIsOpen = () => {
-      setOpen(!isOpen)
+   const openSideBar = () => {
+      console.log('rrr', open)
+      setOpen(true)
    }
 
    const closeSideBar = () => {
@@ -22,9 +23,9 @@ export const AsideMenu = () => {
          </div>
 
          {/* Burger Menu for smaller screens */}
-         <Menu itemListElement={'div'} isOpen={isOpen} onOpen={handleIsOpen} onClose={handleIsOpen}>
+         <Burger open={open} onClose={closeSideBar} onOpen={openSideBar}>
             <Aside closeSideBar={closeSideBar} />
-         </Menu>
+         </Burger>
       </>
    )
 }

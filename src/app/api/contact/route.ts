@@ -9,7 +9,7 @@ export async function POST(request: Request) {
       const {name, email, message} = body
       const wait = (ms: number) => new Promise(resolve => setTimeout(resolve, ms))
       console.log('starting...')
-      await wait(5000)
+      await wait(1000)
       console.log('finishing...')
       // const transporter = nodemailer.createTransport({
       //    host: String(process.env.SMTP_HOST) || 'local',

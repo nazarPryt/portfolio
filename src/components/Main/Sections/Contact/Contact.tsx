@@ -13,7 +13,7 @@ export const Contact = () => {
       email: '',
       message: '',
    })
-   const [status, setStatus] = useState('')
+   const [status, setStatus] = useState<'Error' | 'Success' | 'Loading' | null>(null)
    const [open, setOpen] = useState(false)
 
    const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -25,7 +25,7 @@ export const Contact = () => {
    }
    const handleSubmit = async (e: FormEvent) => {
       e.preventDefault()
-      setStatus('Sending...')
+      setStatus('Loading')
 
       const response = await fetch('/api/contact', {
          method: 'POST',
@@ -36,17 +36,17 @@ export const Contact = () => {
       })
 
       if (response.ok) {
-         setStatus('Message sent successfully!')
+         setStatus('Success')
          setOpen(true)
          setFormData({name: '', email: '', message: ''})
       } else {
-         setStatus('Something went wrong. Please try again.')
+         setStatus('Error')
       }
    }
 
    return (
       <>
-         <Modal title={'ok'} isOpen={open} handleClose={handleClose}>
+         <Modal open={open} onClose={handleClose} title={status as string}>
             <p>{status}</p>
          </Modal>
          <Section id={'contact'} title={'Contact me'} className={s.wrapper} p={p}>
@@ -92,7 +92,7 @@ export const Contact = () => {
 
                <button type='submit'>Send Message</button>
             </form>
-            {status === 'Sending...' && <Spinner fullScreen={true} />}
+            {status === 'Loading' && <Spinner fullScreen={true} />}
          </Section>
       </>
    )
