@@ -1,12 +1,18 @@
 import {NextResponse} from 'next/server'
 import nodemailer from 'nodemailer'
 import {Options} from 'nodemailer/lib/mailer'
+import {EmailTemplate} from '@/shared/EmailTemplate'
 
 export async function POST(request: Request) {
    try {
       const body = await request.json()
       const {name, email, message} = body
 
+      const emailTemplate = EmailTemplate({
+         email,
+         message,
+         name,
+      })
       const transporter = nodemailer.createTransport({
          host: String(process.env.SMTP_HOST) || 'local',
          port: Number(process.env.SMTP_PORT) || 0,
@@ -18,10 +24,10 @@ export async function POST(request: Request) {
       })
 
       const mailOptions: Options = {
+         html: emailTemplate.html,
          from: email,
          to: process.env.SMTP_USER,
          subject: `Message from portfolio`,
-         text: ` name: ${name}, email: ${email}, message: ${message}`,
       }
 
       const info = await transporter.sendMail(mailOptions)
