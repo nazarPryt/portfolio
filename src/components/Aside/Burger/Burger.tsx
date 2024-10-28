@@ -1,34 +1,37 @@
-import {Dialog, DialogClose, DialogContent, DialogOverlay, DialogPortal, DialogTrigger} from '@radix-ui/react-dialog'
+import {
+   Dialog,
+   DialogClose,
+   DialogContent,
+   DialogDescription,
+   DialogOverlay,
+   DialogPortal,
+   DialogTitle,
+} from '@radix-ui/react-dialog'
 import {CloseIcon} from '@/icons/CloseIcon'
-import {ComponentProps, useState} from 'react'
+import {ComponentProps} from 'react'
 import s from './Burger.module.scss'
+import {BurgerMenuTrigger} from '@/components/Aside/Burger/BurgerMenuTrigger'
 
-export type BurgerProps = {onClose?: () => void; onOpen?: () => void; open: boolean} & ComponentProps<'div'>
+export type BurgerProps = {onClose: () => void; onOpen: () => void; open: boolean} & ComponentProps<'div'>
 
 export const Burger = ({children, onClose, onOpen, open = false}: BurgerProps) => {
-   const [isMenuOpen, setIsMenuOpen] = useState(false)
-   const handleChangeMenu = () => {
-      setIsMenuOpen(!isMenuOpen)
-   }
-   function handleModalClosed() {
-      onClose?.()
-   }
-   function handleModalOpen() {
-      console.log('ggg')
-      onOpen?.()
+   const handleOpenChange = (isOpen: boolean) => {
+      if (isOpen) {
+         onOpen()
+      } else {
+         onClose()
+      }
    }
 
    return (
-      <Dialog open={open} onOpenChange={handleModalClosed}>
-         <DialogTrigger asChild>
-            <button className={s.Trigger} onClick={handleModalOpen}>
-               open burger
-            </button>
-         </DialogTrigger>
+      <Dialog open={open} onOpenChange={handleOpenChange}>
+         <BurgerMenuTrigger open={open} setIsOpen={handleOpenChange} />
          <DialogPortal>
             <DialogOverlay className={s.Overlay} />
             <DialogContent className={s.Content}>
-               <div className={s.contentBox}>{children}</div>
+               <DialogTitle />
+               <DialogDescription />
+               {children}
                <DialogClose className={s.closeButton} aria-label='Close'>
                   <CloseIcon />
                </DialogClose>

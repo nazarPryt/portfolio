@@ -8,8 +8,7 @@ export const AsideMenu = () => {
    const [open, setOpen] = useState(false)
 
    const openSideBar = () => {
-      console.log('rrr', open)
-      setOpen(true)
+      setOpen(!open)
    }
 
    const closeSideBar = () => {

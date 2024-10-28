@@ -3,60 +3,65 @@ import {Section} from '@/shared/Section'
 import {ChangeEvent, FormEvent, useState} from 'react'
 import s from './Contact.module.scss'
 import {Spinner} from '@/shared/Spinner'
+
 import {Modal} from '@/shared/Modal'
 
+const initialFormData = {name: '', email: '', message: ''}
+const defaultMessage =
+   'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusamus autem, culpa dignissimos dolore eligendi eos error esse explicabo facere hic impedit necessitatibus nihil nisi rerum sint tempore! Doloremque, ut.'
+
 export const Contact = () => {
-   const p =
-      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusamus autem, culpa dignissimos dolore eligendi eos error esse explicabo facere hic impedit necessitatibus nihil nisi rerum sint tempore! Doloremque, ut.'
-   const [formData, setFormData] = useState({
-      name: '',
-      email: '',
-      message: '',
-   })
+   const [formData, setFormData] = useState(initialFormData)
    const [status, setStatus] = useState<'Error' | 'Success' | 'Loading' | null>(null)
    const [open, setOpen] = useState(false)
+   const [message, setMessage] = useState('')
 
    const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
       const {name, value} = e.target
-      setFormData(prevData => ({...prevData, [name]: value}))
+      setFormData(prev => ({...prev, [name]: value}))
    }
-   const handleClose = () => {
+
+   const handleModalClose = () => {
       setOpen(false)
+      if (status === 'Success') setFormData(initialFormData)
    }
+
    const handleSubmit = async (e: FormEvent) => {
       e.preventDefault()
       setStatus('Loading')
 
-      const response = await fetch('/api/contact', {
-         method: 'POST',
-         headers: {
-            'Content-Type': 'application/json',
-         },
-         body: JSON.stringify(formData),
-      })
+      try {
+         const response = await fetch('/api/contact', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify(formData),
+         })
 
-      if (response.ok) {
+         if (!response.ok) throw new Error('Message could not be sent')
+
          setStatus('Success')
-         setOpen(true)
-         setFormData({name: '', email: '', message: ''})
-      } else {
+         setMessage('Your message was successfully sent!')
+      } catch (error) {
          setStatus('Error')
+         setMessage('Could not send the message. Please try again.')
+      } finally {
+         setOpen(true)
       }
    }
 
    return (
       <>
-         <Modal open={open} onClose={handleClose} title={status as string}>
-            <p>{status}</p>
+         <Modal open={open} onClose={handleModalClose} title={status || ''}>
+            <p>{message}</p>
          </Modal>
-         <Section id={'contact'} title={'Contact me'} className={s.wrapper} p={p}>
+         <Section id='contact' title='Contact Me' className={s.wrapper} p={defaultMessage}>
             <form onSubmit={handleSubmit}>
                <label htmlFor='name'>
                   Name:
                   <input
                      type='text'
                      id='name'
-                     placeholder={'Your Name'}
+                     placeholder='Your Name'
                      name='name'
                      value={formData.name}
                      onChange={handleChange}
@@ -69,7 +74,7 @@ export const Contact = () => {
                   <input
                      type='email'
                      id='email'
-                     placeholder={'Email'}
+                     placeholder='Email'
                      name='email'
                      value={formData.email}
                      onChange={handleChange}
@@ -82,17 +87,18 @@ export const Contact = () => {
                   <textarea
                      id='message'
                      name='message'
-                     placeholder={'Message...'}
+                     placeholder='Message...'
                      value={formData.message}
                      onChange={handleChange}
                      required
-                     aria-required
                   />
                </label>
 
-               <button type='submit'>Send Message</button>
+               <button type='submit' disabled={status === 'Loading'}>
+                  Send Message
+               </button>
             </form>
-            {status === 'Loading' && <Spinner fullScreen={true} />}
+            {status === 'Loading' && <Spinner fullScreen />}
          </Section>
       </>
    )
