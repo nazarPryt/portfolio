@@ -1,6 +1,6 @@
 .Trigger {
-   --s: 50px;
-   --c: white;
+   --s: 40px;
+   --c: var(--color-ui-primary);
    --_g1: linear-gradient(var(--c) 20%, #0000 0 80%, var(--c) 0) no-repeat content-box border-box;
    --_g2: radial-gradient(circle closest-side at 50% 12.5%, var(--c) 95%, #0000) repeat-y content-box border-box;
 
@@ -8,8 +8,8 @@
 
    position: fixed;
    z-index: 9999;
-   top: rem(30);
-   right: rem(30);
+   top: rem(20);
+   right: rem(20);
 
    display: none;
 

@@ -2,8 +2,32 @@ import {NextResponse} from 'next/server'
 import nodemailer from 'nodemailer'
 import {Options} from 'nodemailer/lib/mailer'
 import {EmailTemplate} from '@/shared/EmailTemplate'
+import {Redis} from '@upstash/redis'
+
+const redis = new Redis({
+   url: process.env.UPSTASH_REDIS_REST_URL!,
+   token: process.env.UPSTASH_REDIS_REST_TOKEN!,
+})
+
+const RATE_LIMIT = 5 // Maximum requests
+const TIME_WINDOW = 60 * 60 // 1 hour in seconds
+
+async function rateLimit(ip: string) {
+   const requests = await redis.incr(ip)
+   if (requests === 1) {
+      await redis.expire(ip, TIME_WINDOW)
+   }
+   return requests <= RATE_LIMIT
+}
 
 export async function POST(request: Request) {
+   const ip = request.headers.get('x-forwarded-for') || '127.0.0.1'
+
+   if (!(await rateLimit(ip))) {
+      console.log('error: Rate limit exceeded. Try again later.')
+      return NextResponse.json({message: 'Rate limit exceeded. Try again later.'}, {status: 429})
+   }
+
    try {
       const body = await request.json()
       const {name, email, message} = body
