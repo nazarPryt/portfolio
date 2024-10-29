@@ -1,6 +1,8 @@
 import s from './Portfolio.module.scss'
 import {Section} from '@/shared/Section'
 import {Instareplica} from '@/components/Main/Sections/Portfolio/Projects/Instareplica'
+import {InstaAdmin} from '@/components/Main/Sections/Portfolio/Projects/InstaAdmin'
+import {QuizCards} from '@/components/Main/Sections/Portfolio/Projects/QuizCards'
 
 export const Portfolio = () => {
    const p =
@@ -10,9 +12,8 @@ export const Portfolio = () => {
       <Section id={'portfolio'} title={'My Latest Projects'} p={p}>
          <ul className={s.wrapper}>
             <Instareplica />
-            <Instareplica />
-            <Instareplica />
-            <Instareplica />
+            <InstaAdmin />
+            <QuizCards />
          </ul>
       </Section>
    )

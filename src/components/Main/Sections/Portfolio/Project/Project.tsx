@@ -10,15 +10,19 @@ type Props = {
    title: string
    stack: Array<string>
    children: ReactNode
+   githubLink: string
+   projectLink: string
 }
 
-export const Project = ({cover, title, stack, children}: Props) => {
+export const Project = ({cover, title, stack, children, projectLink, githubLink}: Props) => {
    return (
       <li className={s.wrapper}>
          <div className={s.projectContent}>
             <span className={s.projectOverline}>Project</span>
             <h2 className={s.projectTitle}>
-               <Link href={'/'}>{title}</Link>
+               <Link href={projectLink} target='_blank'>
+                  {title}
+               </Link>
             </h2>
 
             <article className={s.projectDescription}>{children}</article>
@@ -30,17 +34,17 @@ export const Project = ({cover, title, stack, children}: Props) => {
             </ul>
 
             <div className={s.projectLinks}>
-               <Link href={'/'} aria-label='GitHub Link' target='_blank'>
+               <Link href={githubLink} aria-label='GitHub Link' target='_blank'>
                   <IconGitHub />
                </Link>
-               <Link href={'/'} aria-label='External Link' target='_blank'>
+               <Link href={projectLink} aria-label='External Link' target='_blank'>
                   <IconExternal />
                </Link>
             </div>
          </div>
 
          <div className={s.projectImage}>
-            <Link href={'/'}>
+            <Link href={projectLink} target='_blank'>
                <Image src={cover} alt={'project cover'} />
             </Link>
          </div>
