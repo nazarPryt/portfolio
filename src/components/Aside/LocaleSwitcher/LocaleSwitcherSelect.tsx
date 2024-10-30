@@ -1,5 +1,5 @@
 'use client'
-
+import s from './LocaleSwitcher.module.scss'
 import {useParams} from 'next/navigation'
 import {ChangeEvent, ReactNode, useTransition} from 'react'
 import {usePathname, useRouter} from '@/i18n/routing'
@@ -30,12 +30,11 @@ export default function LocaleSwitcherSelect({children, defaultValue, label}: Pr
    }
 
    return (
-      <label>
-         <p>{label}</p>
+      <label className={s.wrapper}>
+         <p>{label}:</p>
          <select defaultValue={defaultValue} disabled={isPending} onChange={onSelectChange}>
             {children}
          </select>
-         <span>⌄</span>
       </label>
    )
 }

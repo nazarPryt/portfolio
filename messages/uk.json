@@ -1,0 +1,25 @@
+{
+   "section": {
+      "Hero": {
+         "name": "Назар Притуляк",
+         "profession": "Інтерфейсний веб-розробник",
+         "resume": "Резюме"
+      }
+   },
+   "NotFoundPage": {
+      "description": "Bitte überprüfe die Addressleiste deines Browsers oder verwende die Navigation um zu einer bekannten Seite zu wechseln.",
+      "title": "Seite nicht gefunden"
+   },
+   "Error": {
+      "description": "<p>Es ist leider ein Problem aufgetreten.</p><p>Du kannst versuchen <retry>diese Seite neu zu laden</retry>.</p>",
+      "title": "Etwas ist schief gelaufen!"
+   },
+   "LocaleSwitcher": {
+      "label": "Змінити мову",
+      "locale": "{locale, select, uk {🇺🇦 Українська} en {🇺🇸 English} other {Невідомий}}"
+   },
+   "Meta": {
+      "title": "Назар Притуляк | Портфоліо веб-розробника",
+      "description": "Ознайомтеся з портфоліо Назара Притуляка, кваліфікованого веб-розробника."
+   }
+}

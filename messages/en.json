@@ -1,7 +1,10 @@
 {
-   "HomePage": {
-      "title": "Hello world!",
-      "about": "Go to the about page"
+   "section": {
+      "Hero": {
+         "name": "Nazar Prytuliak",
+         "profession": "Frontend Web Developer",
+         "resume": "Resume"
+      }
    },
    "NotFoundPage": {
       "description": "Please double-check the browser address bar or use the navigation to go to a known page.",
@@ -13,6 +16,10 @@
    },
    "LocaleSwitcher": {
       "label": "Change language",
-      "locale": "{locale, select, de {🇩🇪 Deutsch} en {🇺🇸 English} other {Unknown}}"
+      "locale": "{locale, select, uk {🇩🇪 Ukrainian} en {🇺🇸 English} other {Unknown}}"
+   },
+   "Meta": {
+      "title": "Nazar Prytuliak | Web Developer Portfolio",
+      "description": "Explore the portfolio of Nazar Prytuliak, a skilled web developer."
    }
 }
