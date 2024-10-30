@@ -31,7 +31,7 @@ export default function LocaleSwitcherSelect({children, defaultValue, label}: Pr
 
    return (
       <label className={s.wrapper}>
-         <p>{label}:</p>
+         {label}:
          <select defaultValue={defaultValue} disabled={isPending} onChange={onSelectChange}>
             {children}
          </select>

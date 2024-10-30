@@ -9,25 +9,28 @@ import {ReactNode, useEffect} from 'react'
 import Link from 'next/link'
 import {useClient} from '@/shared/useClient'
 import s from './NavMenu.module.scss'
+import {useTranslations} from 'next-intl'
 
 type NavLink = {
    name: string
    path: string
    icon: ReactNode
 }
-const NavLinks: Array<NavLink> = [
-   {name: 'Home', path: '/#home', icon: <HouseIcon />},
-   {name: 'About', path: '#about', icon: <PersonIcon />},
-   {name: 'Portfolio', path: '#portfolio', icon: <ImagesIcon />},
-   // {name: 'Services', path: '#services', icon: <HddStackIcon />},
-   {name: 'Contact', path: '#contact', icon: <EnvelopIcon />},
-]
 
 type Props = {
    closeSideBar?: () => void
 }
 
 export const NavMenu = ({closeSideBar}: Props) => {
+   const t = useTranslations('Aside.NavMenu')
+
+   const NavLinks: Array<NavLink> = [
+      {name: t('Home'), path: '/#home', icon: <HouseIcon />},
+      {name: t('About'), path: '#about', icon: <PersonIcon />},
+      {name: t('Portfolio'), path: '#portfolio', icon: <ImagesIcon />},
+      // {name: 'Services', path: '#services', icon: <HddStackIcon />},
+      {name: t('Contact'), path: '#contact', icon: <EnvelopIcon />},
+   ]
    const pathname = usePathname()
    const isClient = useClient()
 

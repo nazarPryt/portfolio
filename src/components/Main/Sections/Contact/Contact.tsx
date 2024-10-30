@@ -5,12 +5,13 @@ import s from './Contact.module.scss'
 import {Spinner} from '@/shared/Spinner'
 
 import {Modal} from '@/shared/Modal'
+import {useTranslations} from 'next-intl'
 
 const initialFormData = {name: '', email: '', message: ''}
-const defaultMessage =
-   'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusamus autem, culpa dignissimos dolore eligendi eos error esse explicabo facere hic impedit necessitatibus nihil nisi rerum sint tempore! Doloremque, ut.'
 
 export const Contact = () => {
+   const t = useTranslations('section.ContactMe')
+
    const [formData, setFormData] = useState(initialFormData)
    const [status, setStatus] = useState<'Error' | 'Success' | 'Loading' | null>(null)
    const [open, setOpen] = useState(false)
@@ -54,7 +55,7 @@ export const Contact = () => {
          <Modal open={open} onClose={handleModalClose} title={status || ''}>
             <p>{message}</p>
          </Modal>
-         <Section id='contact' title='Contact Me' className={s.wrapper} p={defaultMessage}>
+         <Section id='contact' title={t('title')} className={s.wrapper} p={t('p')}>
             <form onSubmit={handleSubmit}>
                <label htmlFor='name'>
                   Name:

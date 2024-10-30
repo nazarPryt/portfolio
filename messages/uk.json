@@ -4,15 +4,27 @@
          "name": "Назар Притуляк",
          "profession": "Інтерфейсний веб-розробник",
          "resume": "Резюме"
+      },
+      "ContactMe": {
+         "title": "Зв'язатись зі мною",
+         "p": "Незалежно від того, чи ви зацікавлені у співпраці, маєте запитання чи просто хочете привітатися, зв’яжіться з нами! Я завжди радий обговорити потенційні проекти, співпрацю чи нові ідеї. Заповніть форму нижче, і я зв'яжуся з вами якнайшвидше!"
+      }
+   },
+   "Aside": {
+      "NavMenu": {
+         "Home": "Додому",
+         "About": "Про мене",
+         "Portfolio": "Проекти",
+         "Contact": "Написати"
       }
    },
    "NotFoundPage": {
-      "description": "Bitte überprüfe die Addressleiste deines Browsers oder verwende die Navigation um zu einer bekannten Seite zu wechseln.",
-      "title": "Seite nicht gefunden"
+      "description": "Будь ласка, ще раз перевірте адресний рядок браузера або скористайтеся навігацією, щоб перейти на відому сторінку.",
+      "title": "Сторінка не знайдена"
    },
    "Error": {
-      "description": "<p>Es ist leider ein Problem aufgetreten.</p><p>Du kannst versuchen <retry>diese Seite neu zu laden</retry>.</p>",
-      "title": "Etwas ist schief gelaufen!"
+      "description": "<p>На жаль, ми зіткнулися з помилкою.</p><p>Ви можете спробувати <retry>перезавантажити сторінку</retry>, яку ви відвідували.</p>",
+      "title": "Щось пішло не так!"
    },
    "LocaleSwitcher": {
       "label": "Змінити мову",
