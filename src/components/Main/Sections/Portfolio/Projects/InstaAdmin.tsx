@@ -1,5 +1,6 @@
 import InstaAdminCover from '@/public/projects/InstaAdminCover.webp'
 import {Project} from '@/components/Main/Sections/Portfolio/Project'
+import {app} from '@/shared/app'
 
 export const InstaAdmin = () => {
    return (
@@ -7,8 +8,8 @@ export const InstaAdmin = () => {
          title={'Insta-Admin'}
          cover={InstaAdminCover}
          stack={['Next', 'Type Script', 'Graphql', 'Apollo Client', 'Styled-components']}
-         projectLink={'https://inctagram-admin-psi.vercel.app'}
-         githubLink={'https://github.com/nazarPryt/inctagram-admin'}
+         frontendLink={app.projects.InstaAdmin.frontend}
+         githubLink={app.projects.InstaAdmin.github}
       >
          <>
             <p>

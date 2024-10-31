@@ -1,5 +1,6 @@
 import QuizCardsCover from '@/public/projects/QuizCardsCover.webp'
 import {Project} from '@/components/Main/Sections/Portfolio/Project'
+import {app} from '@/shared/app'
 
 export const QuizCards = () => {
    return (
@@ -7,8 +8,8 @@ export const QuizCards = () => {
          title={'QuizCards – Interactive Learning Card Platform'}
          cover={QuizCardsCover}
          stack={['React', 'Type Script', 'Redux-Thunk', 'Material UI']}
-         projectLink={'https://kauharenianastassia.github.io'}
-         githubLink={'https://github.com/KauhareniaNastassia/Cards'}
+         frontendLink={app.projects.QuizCards.frontend}
+         githubLink={app.projects.QuizCards.github}
       >
          <>
             <p>

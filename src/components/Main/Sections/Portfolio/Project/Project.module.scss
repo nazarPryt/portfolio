@@ -4,7 +4,7 @@
    display: grid;
    grid-gap: rem(10);
    grid-template-columns: repeat(12, 1fr);
-   align-items: center;
+   align-items: start;
 
    &:nth-of-type(odd) {
       .projectContent {
@@ -31,6 +31,13 @@
 
       .projectLinks {
          justify-content: flex-end;
+
+         .npmIcon {
+            width: 60px;
+            svg {
+               width: 100%;
+            }
+         }
 
          @media (max-width: $mobile) {
             justify-content: flex-start;
@@ -81,6 +88,10 @@
       position: relative;
       z-index: 2;
 
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+
       padding: rem(25);
 
       line-height: 1.8;
@@ -88,7 +99,11 @@
 
       background-color: var(--bg-secondary);
       border-radius: 4px;
-
+      a {
+         svg {
+            transform: translateY(0.4em);
+         }
+      }
       strong {
          color: var(--text-color-primary);
       }
@@ -110,7 +125,7 @@
       li {
          padding: 4px 7px;
 
-         color: var(--text-color-tertiary);
+         color: var(--text-color-primary);
          white-space: nowrap;
 
          background-color: var(--bg-tertiary);

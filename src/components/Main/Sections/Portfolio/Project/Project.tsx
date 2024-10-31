@@ -4,6 +4,7 @@ import {ReactNode} from 'react'
 import Link from 'next/link'
 import {IconGitHub} from '@/icons/GitHubIcon'
 import {IconExternal} from '@/icons/ExternalIcon'
+import {NpmIcon} from '@/icons/NpmIcon'
 
 type Props = {
    cover: StaticImageData
@@ -11,16 +12,17 @@ type Props = {
    stack: Array<string>
    children: ReactNode
    githubLink: string
-   projectLink: string
+   frontendLink: string
+   npmLink?: string
 }
 
-export const Project = ({cover, title, stack, children, projectLink, githubLink}: Props) => {
+export const Project = ({cover, title, stack, children, frontendLink, githubLink, npmLink}: Props) => {
    return (
       <li className={s.wrapper}>
          <div className={s.projectContent}>
             <span className={s.projectOverline}>Project</span>
             <h2 className={s.projectTitle}>
-               <Link href={projectLink} target='_blank'>
+               <Link href={frontendLink} target='_blank'>
                   {title}
                </Link>
             </h2>
@@ -34,17 +36,22 @@ export const Project = ({cover, title, stack, children, projectLink, githubLink}
             </ul>
 
             <div className={s.projectLinks}>
+               {npmLink && (
+                  <Link href={npmLink} aria-label='NPM Link' target='_blank' className={s.npmIcon}>
+                     <NpmIcon />
+                  </Link>
+               )}
                <Link href={githubLink} aria-label='GitHub Link' target='_blank'>
                   <IconGitHub />
                </Link>
-               <Link href={projectLink} aria-label='External Link' target='_blank'>
+               <Link href={frontendLink} aria-label='External Link' target='_blank'>
                   <IconExternal />
                </Link>
             </div>
          </div>
 
          <div className={s.projectImage}>
-            <Link href={projectLink} target='_blank'>
+            <Link href={frontendLink} target='_blank'>
                <Image src={cover} alt={'project cover'} />
             </Link>
          </div>

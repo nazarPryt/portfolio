@@ -1,5 +1,6 @@
 import instareplicaCover from '@/public/projects/instareplicaCover.webp'
 import {Project} from '@/components/Main/Sections/Portfolio/Project'
+import {app} from '@/shared/app'
 
 export const Instareplica = () => {
    return (
@@ -7,8 +8,8 @@ export const Instareplica = () => {
          title={'Instareplica'}
          cover={instareplicaCover}
          stack={['Next', 'Type Script', 'RTK Query', 'Web Socket', 'Styled-components']}
-         projectLink={'https://shotshare.nazarit.com'}
-         githubLink={'https://github.com/nazarPryt/inctagram'}
+         frontendLink={app.projects.Instareplica.frontend}
+         githubLink={app.projects.Instareplica.github}
       >
          <>
             <p>

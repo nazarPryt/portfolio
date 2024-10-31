@@ -3,7 +3,6 @@ import {Section} from '@/shared/Section'
 import {ChangeEvent, FormEvent, useState} from 'react'
 import s from './Contact.module.scss'
 import {Spinner} from '@/shared/Spinner'
-
 import {Modal} from '@/shared/Modal'
 import {useTranslations} from 'next-intl'
 
@@ -40,11 +39,11 @@ export const Contact = () => {
 
          if (!response.ok) throw new Error('Message could not be sent')
 
-         setStatus('Success')
-         setMessage('Your message was successfully sent!')
+         setStatus(t('form.status.success') as 'Success')
+         setMessage(t('form.status.successMessage'))
       } catch (error) {
-         setStatus('Error')
-         setMessage('Could not send the message. Please try again.')
+         setStatus(t('form.status.error') as 'Error')
+         setMessage(t('form.status.errorMessage'))
       } finally {
          setOpen(true)
       }
@@ -58,11 +57,11 @@ export const Contact = () => {
          <Section id='contact' title={t('title')} className={s.wrapper} p={t('p')}>
             <form onSubmit={handleSubmit}>
                <label htmlFor='name'>
-                  Name:
+                  {t('form.name')}:
                   <input
                      type='text'
                      id='name'
-                     placeholder='Your Name'
+                     placeholder={t('form.yourName')}
                      name='name'
                      value={formData.name}
                      onChange={handleChange}
@@ -71,11 +70,11 @@ export const Contact = () => {
                </label>
 
                <label htmlFor='email'>
-                  Email:
+                  {t('form.email')}:
                   <input
                      type='email'
                      id='email'
-                     placeholder='Email'
+                     placeholder={t('form.email')}
                      name='email'
                      value={formData.email}
                      onChange={handleChange}
@@ -84,11 +83,11 @@ export const Contact = () => {
                </label>
 
                <label htmlFor='message'>
-                  Message:
+                  {t('form.message')}:
                   <textarea
                      id='message'
                      name='message'
-                     placeholder='Message...'
+                     placeholder={t('form.message')}
                      value={formData.message}
                      onChange={handleChange}
                      required
@@ -96,7 +95,7 @@ export const Contact = () => {
                </label>
 
                <button type='submit' disabled={status === 'Loading'}>
-                  Send Message
+                  {t('form.send')}
                </button>
             </form>
             {status === 'Loading' && <Spinner fullScreen />}

@@ -5,9 +5,26 @@
          "profession": "Frontend Web Developer",
          "resume": "Resume"
       },
+      "Projects": {
+         "title": "My Latest Projects",
+         "p": "Here’s a selection of recent projects that showcase my skills in frontend development. Each project reflects my commitment to clean code, responsive design, and delivering engaging user experiences. Explore how I apply modern web technologies to create dynamic and functional websites."
+      },
       "ContactMe": {
          "title": "Contact Me",
-         "p": "Whether you’re interested in working together, have a question, or just want to say hello, feel free to get in touch! I’m always excited to discuss potential projects, collaborations, or new ideas. Fill out the form below, and I’ll get back to you as soon as possible. Looking forward to connecting!"
+         "p": "Whether you’re interested in working together, have a question, or just want to say hello, feel free to get in touch! I’m always excited to discuss potential projects, collaborations, or new ideas. Fill out the form below, and I’ll get back to you as soon as possible. Looking forward to connecting!",
+         "form": {
+            "name": "Name",
+            "yourName": "Your Name",
+            "email": "Email",
+            "message": "Message",
+            "send": "Send Message",
+            "status": {
+               "success": "Success",
+               "successMessage": "Your message was successfully sent!",
+               "error": "Error",
+               "errorMessage": "Could not send the message. Please try again later"
+            }
+         }
       }
    },
    "Aside": {
@@ -31,7 +48,7 @@
       "locale": "{locale, select, uk {🇩🇪 Ukrainian} en {🇺🇸 English} other {Unknown}}"
    },
    "Meta": {
-      "title": "Nazar Prytuliak | Web Developer Portfolio",
+      "title": "Nazar Prytuliak |  Назар Притуляк | Web Developer Portfolio",
       "description": "Explore the portfolio of Nazar Prytuliak, a skilled web developer."
    }
 }

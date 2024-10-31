@@ -3,16 +3,18 @@ import {Section} from '@/shared/Section'
 import {Instareplica} from '@/components/Main/Sections/Portfolio/Projects/Instareplica'
 import {InstaAdmin} from '@/components/Main/Sections/Portfolio/Projects/InstaAdmin'
 import {QuizCards} from '@/components/Main/Sections/Portfolio/Projects/QuizCards'
+import {UiKit} from '@/components/Main/Sections/Portfolio/Projects/UiKit'
+import {useTranslations} from 'next-intl'
 
 export const Portfolio = () => {
-   const p =
-      'Here’s a selection of recent projects that showcase my skills in frontend development. Each project reflects my commitment to clean code, responsive design, and delivering engaging user experiences. Explore how I apply modern web technologies to create dynamic and functional websites.'
+   const t = useTranslations('section.Projects')
 
    return (
-      <Section id={'portfolio'} title={'My Latest Projects'} p={p}>
+      <Section id={'portfolio'} title={t('title')} p={t('p')}>
          <ul className={s.wrapper}>
             <Instareplica />
             <InstaAdmin />
+            <UiKit />
             <QuizCards />
          </ul>
       </Section>
