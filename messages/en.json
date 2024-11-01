@@ -5,6 +5,13 @@
          "profession": "Frontend Web Developer",
          "resume": "Resume"
       },
+      "About": {
+         "title": "About",
+         "p": "Greetings! My name is Nazar, I am a frontend web developer with experience in creating modern and effective web applications. I have deep knowledge of HTML, CSS, JavaScript, and also work with frameworks such as React and Next.js. I constantly improve my skills and follow new technologies in web development to create fast, intuitive and responsive user interfaces. Open to new challenges and cooperation with motivated teams. My goal is to help businesses grow through modern digital solutions and provide the best user experience.",
+         "details": {
+            "p": "’m always open to new challenges and collaborations, whether it’s creating a unique solution or refining an existing idea. Let’s connect and see how we can make something exceptional together!"
+         }
+      },
       "Projects": {
          "title": "My Latest Projects",
          "p": "Here’s a selection of recent projects that showcase my skills in frontend development. Each project reflects my commitment to clean code, responsive design, and delivering engaging user experiences. Explore how I apply modern web technologies to create dynamic and functional websites."
@@ -45,7 +52,7 @@
    },
    "LocaleSwitcher": {
       "label": "Change language",
-      "locale": "{locale, select, uk {🇩🇪 Ukrainian} en {🇺🇸 English} other {Unknown}}"
+      "locale": "{locale, select, uk {🇺🇦 Ukrainian} en {🇺🇸 English} other {Unknown}}"
    },
    "Meta": {
       "title": "Nazar Prytuliak |  Назар Притуляк | Web Developer Portfolio",

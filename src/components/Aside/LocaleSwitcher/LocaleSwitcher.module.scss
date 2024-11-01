@@ -1,16 +1,16 @@
 .wrapper {
    display: flex;
    flex-direction: column;
-   gap: rem(5);
+   gap: em(5);
    align-items: center;
 
    select {
       cursor: pointer;
 
       width: 100%;
-      padding: rem(5) rem(10);
+      padding: em(5) em(10);
 
-      font-size: rem(18);
+      font-size: em(18);
       color: var(--text-color-primary);
 
       -webkit-appearance: none;

@@ -1,8 +1,6 @@
 .wrapper {
    margin: 0;
-   padding: 0 0 em(20) 0;
-
-   @include adaptiveValue('font-size', 16, 14);
+   font-size: em(16);
 
    a {
       display: flex;

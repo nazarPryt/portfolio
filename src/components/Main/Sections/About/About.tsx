@@ -3,22 +3,12 @@ import {Section} from '@/shared/Section'
 import Image from 'next/image'
 import myPhoto from '@/public/bg/my-profile-img.jpg'
 import {ChevronRight} from '@/icons/ChevronRight'
+import {useTranslations} from 'next-intl'
 
 export const About = () => {
-   const p =
-      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur iusto tempora tempore. Accusamus atque beatae distinctio, dolore dolorum enim eos fugit harum inventore iusto odio omnis quibusdam quis quisquam veritatis!'
+   const t = useTranslations('section.About')
    return (
-      <Section
-         className={s.wrapper}
-         id={'about'}
-         p={
-            'Hello! I’m Nazar Prytuliak, a passionate Frontend Web Developer specializing in crafting responsive,\n' +
-            '                  interactive websites that balance functionality with visual appeal. My journey in web development has\n' +
-            '                  been driven by curiosity and a commitment to creating seamless, engaging user experiences that leave a\n' +
-            '                  lasting impression.'
-         }
-         title={'About'}
-      >
+      <Section className={s.wrapper} id={'about'} p={t('p')} title={t('title')}>
          <div className={s.box}>
             <div>
                <Image src={myPhoto} alt={'my photo'} />
@@ -59,10 +49,7 @@ export const About = () => {
                   </li>
                </ul>
 
-               <p>
-                  I’m always open to new challenges and collaborations, whether it’s creating a unique solution or
-                  refining an existing idea. Let’s connect and see how we can make something exceptional together!
-               </p>
+               <p>{t('details.p')}</p>
             </div>
          </div>
       </Section>

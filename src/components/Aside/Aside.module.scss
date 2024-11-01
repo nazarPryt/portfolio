@@ -1,12 +1,12 @@
 .wrapper {
    display: flex;
    flex-direction: column;
-   gap: rem(20);
+   gap: em(15);
    align-items: center;
 
    width: rem(300);
    height: 100%;
-   padding-inline: rem(15);
+   padding: em(13);
 
    color: var(--text-color-primary);
 
@@ -15,12 +15,14 @@
 
    transition: all ease-in-out 0.3s;
 
+   @include adaptiveValue('font-size', 18, 24);
+
    .profileImg {
-      width: rem(120);
-      height: rem(120);
+      width: em(120);
+      height: em(120);
 
       img {
-         margin-block: rem(15);
+         margin-block: em(15);
          object-fit: cover;
          border: 8px solid color-mix(in srgb, var(--text-color-primary), transparent 85%);
          border-radius: 50%;
@@ -28,8 +30,16 @@
    }
    h1 {
       margin: 0;
-      font-size: rem(24);
+
+      font-size: em(24);
       font-weight: 700;
       color: var(--text-color-secondary);
+      text-align: center;
+   }
+
+   @media (max-width: $mobileSmall) {
+      .profileImg {
+         display: none;
+      }
    }
 }
