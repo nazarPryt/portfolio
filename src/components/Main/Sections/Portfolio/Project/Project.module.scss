@@ -72,6 +72,7 @@
          justify-content: center;
 
          height: 100%;
+         padding: 5px;
       }
    }
 
@@ -81,6 +82,8 @@
    }
 
    .projectTitle {
+      font-size: rem(30);
+
       @include adaptiveValue('margin-bottom', 20, 5);
    }
 
@@ -95,9 +98,9 @@
       padding: rem(25);
 
       line-height: 1.8;
-      color: var(--text-color-secondary);
+      color: white;
 
-      background-color: var(--bg-secondary);
+      background-color: var(--color-ui-primary);
       border-radius: 4px;
       a {
          svg {
@@ -105,7 +108,7 @@
          }
       }
       strong {
-         color: var(--text-color-primary);
+         color: white;
       }
 
       @media (max-width: $mobile) {

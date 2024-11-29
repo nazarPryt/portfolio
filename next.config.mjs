@@ -18,6 +18,7 @@ const nextConfig = {
         @import "functions.scss";
         @import "mixins.scss";
         @import "_variables.scss";
+        @import "typography.scss";
       `,
    },
 }

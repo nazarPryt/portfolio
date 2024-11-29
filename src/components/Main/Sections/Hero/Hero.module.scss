@@ -44,16 +44,17 @@
       gap: em(10);
       align-items: center;
 
-      color: white;
       text-align: center;
 
       h1 {
          font-size: em(64);
          font-weight: 700;
+         color: white;
       }
 
       p {
          font-size: em(26);
+         color: white;
       }
    }
 }

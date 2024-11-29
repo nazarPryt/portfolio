@@ -1,9 +1,3 @@
-:root {
-   --default-font: Roboto;
-   --heading-font: Raleway;
-   --nav-font: Poppins;
-}
-
 *,
 *::before,
 *::after {
@@ -47,7 +41,11 @@ h4,
 h5,
 h6 {
    margin: 0;
-   font-family: var(--heading-font), sans-serif;
+
+   @include font-heading1;
+}
+p {
+   @include font-paragraph1;
 }
 
 //~~~~-auto fills for inputs

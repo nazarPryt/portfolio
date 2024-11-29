@@ -1,10 +1,10 @@
 import {ReactNode} from 'react'
-import {defaultFont, headingFont, navFont} from '@/styles/fonts'
+import {defaultFont} from '@/styles/fonts'
 import {notFound} from 'next/navigation'
-import '@/styles/main.scss'
 import {Providers} from '@/context/Providers'
 import {routing} from '@/i18n/routing'
 import {setRequestLocale} from 'next-intl/server'
+import '@/styles/main.scss'
 
 type Props = {
    children: ReactNode
@@ -23,11 +23,7 @@ export default async function RootLayout({children, params: {locale}}: Props) {
    // Enable static rendering
    setRequestLocale(locale)
    return (
-      <html
-         suppressHydrationWarning
-         lang={locale}
-         className={`${navFont.variable} ${defaultFont.variable} ${headingFont.variable}`}
-      >
+      <html suppressHydrationWarning lang={locale} className={defaultFont.variable}>
          <head>
             <link id='favicon' rel='icon' href='/favicons/light-favicon-32x32.png' />
          </head>

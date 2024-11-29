@@ -1,18 +1,17 @@
 .wrapper {
    background-color: var(--bg-primary);
 
+   @include adaptiveValue('font-size', 20, 16);
+
    .box {
       display: flex;
       gap: em(30);
 
       h2 {
-         @include adaptiveValue('font-size', 36, 26);
-
-         margin-bottom: em(20);
-         font-weight: 700;
+         margin-bottom: em(5);
       }
       p {
-         margin-bottom: em(30);
+         margin-bottom: em(15);
       }
       ul {
          display: flex;

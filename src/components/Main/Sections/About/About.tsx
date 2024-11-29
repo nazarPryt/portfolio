@@ -14,38 +14,22 @@ export const About = () => {
                <Image src={myPhoto} alt={'my photo'} />
             </div>
             <div>
-               <h2>Frontend Web Developer</h2>
-               <p>
-                  With a strong foundation in HTML, CSS, and JavaScript and experience in frameworks like Next.js, I’m
-                  dedicated to building dynamic applications that meet modern standards. I’m always exploring the latest
-                  tools and techniques to bring innovative ideas to life, ensuring that my projects are efficient,
-                  scalable, and easy to use.
-               </p>
-
                <ul>
                   <li>
                      <ChevronRight />
-                     <strong>Birthday:</strong>15 September 1990
+                     <strong>English:</strong>upper-intermediate
                   </li>
                   <li>
                      <ChevronRight />
-                     <strong>Website:</strong>www.example.com
+                     <strong>Italian:</strong>upper-intermediate
                   </li>
                   <li>
                      <ChevronRight />
-                     <strong>Phone:</strong>+123 456 7890
+                     <strong>Russian:</strong>Advance
                   </li>
                   <li>
                      <ChevronRight />
-                     <strong>Degree:</strong>Master
-                  </li>
-                  <li>
-                     <ChevronRight />
-                     <strong>Email:</strong>email@example.com
-                  </li>
-                  <li>
-                     <ChevronRight />
-                     <strong>City:</strong>Caserta, Italy
+                     <strong>Ukrainian:</strong>Mother language
                   </li>
                </ul>
 
