@@ -16,6 +16,11 @@ export const app = {
          github: 'https://github.com/nazarPryt/inctagram-admin',
          frontend: 'https://insta-admin.nazarit.com',
       },
+      ShopV1: {
+         github: 'https://github.com/nazarPryt/Online-Store',
+         frontend: 'https://shop.nazarit.com',
+         backend: 'https://github.com/nazarPryt/back-for-shop-v3',
+      },
       Instareplica: {
          github: 'https://github.com/nazarPryt/inctagram',
          frontend: 'https://shotshare.nazarit.com',

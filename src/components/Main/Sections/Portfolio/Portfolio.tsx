@@ -1,10 +1,7 @@
-import s from './Portfolio.module.scss'
 import {Section} from '@/shared/Section'
-import {Instareplica} from '@/components/Main/Sections/Portfolio/Projects/Instareplica'
-import {InstaAdmin} from '@/components/Main/Sections/Portfolio/Projects/InstaAdmin'
-import {QuizCards} from '@/components/Main/Sections/Portfolio/Projects/QuizCards'
-import {UiKit} from '@/components/Main/Sections/Portfolio/Projects/UiKit'
 import {useTranslations} from 'next-intl'
+import {ShopV1, Instareplica, UiKit, InstaAdmin, QuizCards} from './Projects'
+import s from './Portfolio.module.scss'
 
 export const Portfolio = () => {
    const t = useTranslations('section.Projects')
@@ -15,6 +12,7 @@ export const Portfolio = () => {
             <Instareplica />
             <InstaAdmin />
             <UiKit />
+            <ShopV1 />
             <QuizCards />
          </ul>
       </Section>

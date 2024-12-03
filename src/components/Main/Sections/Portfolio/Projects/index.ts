@@ -1,0 +1,5 @@
+export {Instareplica} from './Instareplica'
+export {InstaAdmin} from './InstaAdmin'
+export {ShopV1} from './Shop-v1'
+export {QuizCards} from './QuizCards'
+export {UiKit} from './UiKit'
