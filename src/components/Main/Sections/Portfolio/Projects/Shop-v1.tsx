@@ -6,25 +6,34 @@ export const ShopV1 = () => {
    return (
       <Project
          title={'ShopV1'}
+         subTitle={'FullStack Application'}
          cover={ShopV1Cover}
          stack={['React', 'Type Script', 'Redux-Toolkit', 'Stripe', 'Material-Ui']}
+         bakEndStack={[
+            'Express',
+            'Type Script',
+            'Mongo-DB/Mongoose',
+            'Cloudinary',
+            'JWT-authentication',
+            'Nodemailer',
+            'Zod-validators',
+         ]}
          frontendLink={app.projects.ShopV1.frontend}
          githubLink={app.projects.ShopV1.github}
       >
          <>
             <p>
-               This project recreates a social media experience similar to Instagram, enabling users to connect, share,
-               and interact with a dynamic photo-sharing platform. Key features include user registration, photo
-               uploading, and profile customization, alongside a chat system for real-time messaging. Users can follow
-               and subscribe to each other, and a notification system keeps them updated on interactions, new posts, and
-               messages.
+               The first version of my full-stack e-commerce application that allows users to browse products, add items
+               to their cart, and securely complete purchases using <strong>Stripe</strong> integration. The application
+               features user authentication, a responsive design for seamless browsing on all devices, also admin
+               dashboard for managing inventory, adding new items, viewing orders, and user data. Built with performance
+               and scalability in mind, it integrates a backend API for handling business logic and a dynamic frontend
+               for an engaging user experience.
             </p>
             <br />
             <p>
-               Built with a modern tech stack, this project incorporates responsive design for optimal usability on
-               mobile and desktop, real-time updates, and intuitive navigation. The backend manages efficient data
-               handling and secure storage, supporting a smooth and interactive experience that mirrors today’s social
-               media standards.
+               The backend is hosted on my own VPS server, ensuring control over deployment, scalability, and data
+               security.
             </p>
          </>
       </Project>

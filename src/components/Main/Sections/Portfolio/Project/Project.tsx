@@ -9,18 +9,30 @@ import {NpmIcon} from '@/icons/NpmIcon'
 type Props = {
    cover: StaticImageData
    title: string
+   subTitle?: string
    stack: Array<string>
+   bakEndStack?: Array<string>
    children: ReactNode
    githubLink: string
    frontendLink: string
    npmLink?: string
 }
 
-export const Project = ({cover, title, stack, children, frontendLink, githubLink, npmLink}: Props) => {
+export const Project = ({
+   cover,
+   subTitle = 'Frontend',
+   title,
+   stack,
+   children,
+   frontendLink,
+   githubLink,
+   bakEndStack,
+   npmLink,
+}: Props) => {
    return (
       <li className={s.wrapper}>
          <div className={s.projectContent}>
-            <span className={s.projectOverline}>Project</span>
+            <span className={s.projectOverline}>{subTitle}</span>
             <h2 className={s.projectTitle}>
                <Link href={frontendLink} target='_blank'>
                   {title}
@@ -34,6 +46,16 @@ export const Project = ({cover, title, stack, children, frontendLink, githubLink
                   <li key={item}>{item}</li>
                ))}
             </ul>
+
+            {bakEndStack && (
+               <ul className={s.projectTechList}>
+                  {bakEndStack.map(item => (
+                     <li className={s.back} key={item}>
+                        {item}
+                     </li>
+                  ))}
+               </ul>
+            )}
 
             <div className={s.projectLinks}>
                {npmLink && (

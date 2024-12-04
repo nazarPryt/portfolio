@@ -9,7 +9,10 @@ export const Hero = () => {
 
    return (
       <section className={s.wrapper}>
-         <Image src={heroBg} alt={'heroBg'} priority={false} placeholder={'blur'} />
+         <picture>
+            <source media='(max-width: 650px)' srcSet='/bg/my-profile-img.jpg' />
+            <Image src={heroBg} alt='heroBg' priority={false} placeholder={'blur'} />
+         </picture>
          <div>
             <h1>{t('name')}</h1>
             <p>{t('profession')}</p>

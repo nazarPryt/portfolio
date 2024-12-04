@@ -132,6 +132,11 @@
 
          background-color: var(--bg-tertiary);
          border-radius: em(10);
+
+         &.back {
+            color: var(--bg-tertiary);
+            background-color: var(--text-color-primary);
+         }
       }
    }
 

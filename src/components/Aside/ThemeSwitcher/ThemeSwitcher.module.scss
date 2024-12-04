@@ -1,20 +1,27 @@
 .wrapper {
    display: flex;
    gap: rem(5);
-   background-color: #a8a9b4;
+
    padding: rem(5) rem(10);
+
    border-radius: 50px;
 
+   //background-color: #a8a9b4;
+
    button {
+      cursor: pointer;
+
       display: flex;
       align-items: center;
       justify-content: center;
-      border: none;
-      cursor: pointer;
-      transition: background-color 0.5s ease;
+
       padding: 3px 10px;
-      border-radius: 50px;
+
       background-color: gray;
+      border: none;
+      border-radius: 50px;
+
+      transition: background-color 0.5s ease;
 
       svg {
          color: white;
@@ -24,9 +31,9 @@
       }
    }
    .selected {
-      transition: 300ms ease-out;
-      border-radius: 0.3em;
       background-color: var(--color-ui-primary);
+      border-radius: 0.3em;
       box-shadow: 0 rem(2) rem(13) 0 var(--bg-primary-color);
+      transition: 300ms ease-out;
    }
 }
