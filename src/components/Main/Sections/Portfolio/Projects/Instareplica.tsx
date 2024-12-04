@@ -5,7 +5,7 @@ import {app} from '@/shared/app'
 export const Instareplica = () => {
    return (
       <Project
-         title={'Instareplica'}
+         title={app.projects.Instareplica.name}
          cover={instareplicaCover}
          stack={['Next', 'Type Script', 'RTK Query', 'Web Socket', 'Styled-components']}
          frontendLink={app.projects.Instareplica.frontend}
@@ -13,11 +13,10 @@ export const Instareplica = () => {
       >
          <>
             <p>
-               This project recreates a social media experience similar to Instagram, enabling users to connect, share,
-               and interact with a dynamic photo-sharing platform. Key features include user registration, photo
-               uploading, and profile customization, alongside a chat system for real-time messaging. Users can follow
-               and subscribe to each other, and a notification system keeps them updated on interactions, new posts, and
-               messages.
+               This project recreates a social media experience, enabling users to connect, share, and interact with a
+               dynamic photo-sharing platform. Key features include user registration, photo uploading, and profile
+               customization, alongside a chat system for real-time messaging. Users can follow and subscribe to each
+               other, and a notification system keeps them updated on interactions, new posts, and messages.
             </p>
             <br />
             <p>

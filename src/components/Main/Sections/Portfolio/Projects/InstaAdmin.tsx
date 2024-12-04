@@ -5,7 +5,7 @@ import {app} from '@/shared/app'
 export const InstaAdmin = () => {
    return (
       <Project
-         title={'Insta-Admin'}
+         title={app.projects.InstaAdmin.name}
          cover={InstaAdminCover}
          stack={['Next', 'Type Script', 'Graphql', 'Apollo Client', 'Styled-components']}
          frontendLink={app.projects.InstaAdmin.frontend}

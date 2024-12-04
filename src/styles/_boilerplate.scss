@@ -6,9 +6,11 @@
    padding: 0;
 }
 
-body {
+html {
    scroll-behavior: smooth;
+}
 
+body {
    font-family: var(--default-font), sans-serif;
    line-height: 1.2;
    color: var(--text-color-primary);
@@ -29,6 +31,7 @@ a {
       text-decoration: none;
    }
 }
+
 img {
    width: 100%;
    height: auto;

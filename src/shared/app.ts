@@ -1,5 +1,6 @@
 export const app = {
    mySocial: {
+      glances: 'https://glances.nazarit.com',
       telegram: 'https://t.me/nazar_pryt',
       gitHub: 'https://github.com/nazarPryt',
       linkedin: 'https://linkedin.com/in/nazar-prytuliak',
@@ -13,6 +14,7 @@ export const app = {
          frontend: 'https://inctagram-ui-kit.vercel.app',
       },
       InstaAdmin: {
+         name: 'Insta-Admin',
          github: 'https://github.com/nazarPryt/inctagram-admin',
          frontend: 'https://insta-admin.nazarit.com',
       },
@@ -22,6 +24,7 @@ export const app = {
          backend: 'https://github.com/nazarPryt/back-for-shop-v3',
       },
       Instareplica: {
+         name: 'Instareplica',
          github: 'https://github.com/nazarPryt/inctagram',
          frontend: 'https://shotshare.nazarit.com',
       },

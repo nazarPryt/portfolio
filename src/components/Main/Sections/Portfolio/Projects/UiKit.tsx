@@ -16,12 +16,13 @@ export const UiKit = () => {
       >
          <>
             <p>
-               The shared UI Kit for <strong>Instareplica</strong> and <strong>InstaAdmin</strong> utilizes TypeScript
-               for reliable component development, Storybook for interactive documentation, Styled-components for
-               themeable styling, and Radix UI for accessible design primitives. The kit is structured for modularity,
-               allowing for reusable components with a strong emphasis on maintainability. It supports flexible theming,
-               enabling both light and dark modes and easy customization for distinct brand identities, ensuring a
-               cohesive user experience across both applications. Additionally, the UI Kit is published to{' '}
+               The shared UI Kit for <Link href={`#${app.projects.Instareplica.name}`}>Instareplica</Link> and
+               <Link href={`#${app.projects.InstaAdmin.name}`}> InstaAdmin</Link> utilizes TypeScript for reliable
+               component development, Storybook for interactive documentation, Styled-components for themeable styling,
+               and Radix UI for accessible design primitives. The kit is structured for modularity, allowing for
+               reusable components with a strong emphasis on maintainability. It supports flexible theming, enabling
+               both light and dark modes and easy customization for distinct brand identities, ensuring a cohesive user
+               experience across both applications. Additionally, the UI Kit is published to{' '}
                <Link href={app.projects.uiKit.npm} aria-label='NPM Link' target='_blank'>
                   <NpmIcon />
                </Link>{' '}

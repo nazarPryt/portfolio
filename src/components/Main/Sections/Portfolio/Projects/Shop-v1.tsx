@@ -1,11 +1,12 @@
 import ShopV1Cover from '@/public/projects/Shop-v1Cover.webp'
 import {Project} from '@/components/Main/Sections/Portfolio/Project'
 import {app} from '@/shared/app'
+import Link from 'next/link'
 
 export const ShopV1 = () => {
    return (
       <Project
-         title={'ShopV1'}
+         title={'Shop-V1'}
          subTitle={'FullStack Application'}
          cover={ShopV1Cover}
          stack={['React', 'Type Script', 'Redux-Toolkit', 'Stripe', 'Material-Ui']}
@@ -32,8 +33,15 @@ export const ShopV1 = () => {
             </p>
             <br />
             <p>
-               The backend is hosted on my own VPS server, ensuring control over deployment, scalability, and data
-               security.
+               The{' '}
+               <Link href={app.projects.ShopV1.backend} target={'_blank'}>
+                  Backend{' '}
+               </Link>{' '}
+               is hosted on my{' '}
+               <Link href={app.mySocial.glances} target={'_blank'}>
+                  VPS server
+               </Link>
+               , ensuring control over deployment, scalability, and data security.
             </p>
          </>
       </Project>

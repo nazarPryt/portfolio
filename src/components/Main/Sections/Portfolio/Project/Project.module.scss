@@ -98,17 +98,19 @@
       padding: rem(25);
 
       line-height: 1.8;
-      color: white;
+      color: rgb(148 163 184 / 1);
 
-      background-color: var(--color-ui-primary);
+      background-color: rgb(15 23 42/1);
       border-radius: 4px;
-      a {
+
+      a,
+      strong {
+         font-weight: bold;
+         color: white;
+
          svg {
             transform: translateY(0.4em);
          }
-      }
-      strong {
-         color: white;
       }
 
       @media (max-width: $mobile) {

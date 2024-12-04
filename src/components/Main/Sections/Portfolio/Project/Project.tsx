@@ -30,7 +30,7 @@ export const Project = ({
    npmLink,
 }: Props) => {
    return (
-      <li className={s.wrapper}>
+      <li className={s.wrapper} id={title}>
          <div className={s.projectContent}>
             <span className={s.projectOverline}>{subTitle}</span>
             <h2 className={s.projectTitle}>
