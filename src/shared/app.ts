@@ -3,6 +3,7 @@ export const app = {
       glances: 'https://glances.nazarit.com',
       telegram: 'https://t.me/nazar_pryt',
       gitHub: 'https://github.com/nazarPryt',
+      portfolio: 'https://nazarit.com',
       linkedin: 'https://linkedin.com/in/nazar-prytuliak',
       whatsapp:
          'https://api.whatsapp.com/send?phone=393925224866&text=Hi%20Nazar!%20Saw%20your%20portfolio%20%E2%80%94%20let%E2%80%99s%20discuss!%F0%9F%91%8D',

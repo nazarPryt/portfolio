@@ -5,12 +5,17 @@ import {Providers} from '@/context/Providers'
 import {routing} from '@/i18n/routing'
 import {setRequestLocale} from 'next-intl/server'
 import '@/styles/main.scss'
+import {Metadata} from 'next'
+import {getMyMetadata} from '@/shared/getMyMetadata'
 
 type Props = {
    children: ReactNode
    params: {
       locale: string
    }
+}
+export async function generateMetadata(): Promise<Metadata> {
+   return await getMyMetadata()
 }
 export function generateStaticParams() {
    return routing.locales.map(locale => ({locale}))
