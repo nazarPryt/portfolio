@@ -1,4 +1,10 @@
 export const app = {
+   meta: {
+      title: 'Nazar Prytuliak | Frontend Web Developer',
+      alt: "A preview of Nazar Prytuliak's portfolio showcasing web development projects and a professional layout.",
+      description:
+         'Hi, I’m Nazar Prytuliak. I create modern, user-friendly websites and web applications. Take a look at my portfolio to see the projects I’ve worked on and learn more about me.',
+   },
    mySocial: {
       glances: 'https://glances.nazarit.com',
       telegram: 'https://t.me/nazar_pryt',

@@ -2,18 +2,28 @@ import {Metadata} from 'next'
 import {app} from '@/shared/app'
 
 export async function getMyMetadata(): Promise<Metadata> {
-   const title = 'Nazar Prytuliak - Frontend Web Developer'
+   const {title, description, alt} = app.meta
    const baseUrl = app.mySocial.portfolio
-   const Thumbnail = '/bg/hero-bg.jpg'
-
-   const description =
-      'Hi, I’m Nazar Prytuliak. I create modern, user-friendly websites and web applications. Take a look at my portfolio to see the projects I’ve worked on and learn more about me.'
+   const op = '/openGraph/op.webp'
+   const opTwitter = '/openGraph/opTwitter.webp'
 
    return {
       metadataBase: new URL(baseUrl),
       title,
       description,
-
+      twitter: {
+         title,
+         description,
+         images: [
+            {
+               url: opTwitter,
+               secureUrl: opTwitter,
+               width: 1500,
+               height: 500,
+               alt,
+            },
+         ],
+      },
       openGraph: {
          lastName: 'Prytuliak',
          firstName: 'Nazar',
@@ -22,11 +32,11 @@ export async function getMyMetadata(): Promise<Metadata> {
          url: baseUrl,
          images: [
             {
-               url: Thumbnail,
-               secureUrl: Thumbnail,
+               url: op,
+               secureUrl: op,
                width: 1200,
                height: 630,
-               alt: "A preview of Nazar Prytuliak's portfolio showcasing web development projects and a professional layout.",
+               alt,
             },
          ],
          type: 'profile',

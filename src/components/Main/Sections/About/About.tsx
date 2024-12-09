@@ -10,9 +10,9 @@ export const About = () => {
    return (
       <Section className={s.wrapper} id={'about'} p={t('p')} title={t('title')}>
          <div className={s.box}>
-            <div>
-               <Image src={myPhoto} alt={'my photo'} />
-            </div>
+            {/*<div>*/}
+            {/*   <Image src={myPhoto} alt={'my photo'} />*/}
+            {/*</div>*/}
             <div>
                <ul>
                   <li>
