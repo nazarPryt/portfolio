@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import myProfileImg from '@/public/bg/my-profile-img.jpg'
+import myProfileImg from '@/public/bg/my-profile-img.webp'
 import {SocialLinks} from './SocialLinks'
 import {NavMenu} from './NavMenu'
 import {ThemeSwitcher} from './ThemeSwitcher'

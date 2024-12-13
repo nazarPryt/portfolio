@@ -18,14 +18,18 @@
    @include adaptiveValue('font-size', 18, 24);
 
    .profileImg {
+      overflow: hidden;
+
       width: em(120);
       height: em(120);
 
+      background-color: black;
+      border: 8px solid color-mix(in srgb, var(--text-color-primary), transparent 85%);
+      border-radius: 50%;
+
       img {
-         margin-block: em(15);
-         object-fit: cover;
-         border: 8px solid color-mix(in srgb, var(--text-color-primary), transparent 85%);
-         border-radius: 50%;
+         height: 100%;
+         object-fit: contain;
       }
    }
    h1 {
